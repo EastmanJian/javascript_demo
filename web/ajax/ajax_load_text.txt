@@ -1,0 +1,8 @@
+• AJAX ---- Asynchronous JavaScript And XML<br/>
+• AJAX is not a new programming language, but a new way to use existing standards, including<br/>
+&nbsp;&nbsp;○ XMLHttpRequest object (to exchange data asynchronously with a server)<br/>
+&nbsp;&nbsp;○ JavaScript/DOM (to display/interact with the information)<br/>
+&nbsp;&nbsp;○ CSS (to style the data)<br/>
+&nbsp;&nbsp;○ XML (often used as the format for transferring data)<br/>
+• AJAX is a technique for creating fast and dynamic web pages.<br/>
+• AJAX is the art of exchanging data with a server, and updating parts of a web page asynchronously - without reloading the whole page.<br/>
