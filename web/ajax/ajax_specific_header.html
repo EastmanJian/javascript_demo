@@ -3,43 +3,35 @@
 <head>
     <script type="text/javascript">
         var xmlhttp;
-        function loadXMLDoc(url)
-        {
-            xmlhttp=null;
-            if (window.XMLHttpRequest)
-            {// all modern browsers
-                xmlhttp=new XMLHttpRequest();
+        function loadXMLDoc(url) {
+            xmlhttp = null;
+            if (window.XMLHttpRequest) {// all modern browsers
+                xmlhttp = new XMLHttpRequest();
             }
-            else if (window.ActiveXObject)
-            {// for IE5, IE6
-                xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+            else if (window.ActiveXObject) {// for IE5, IE6
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
             }
-            if (xmlhttp!=null)
-            {
-                xmlhttp.onreadystatechange=state_Change;
-                xmlhttp.open("GET",url,true);
+            if (xmlhttp != null) {
+                xmlhttp.onreadystatechange = state_Change;
+                xmlhttp.open("GET", url, true);
                 xmlhttp.send(null);
             }
-            else
-            {
+            else {
                 alert("Your browser does not support XMLHTTP.");
             }
         }
 
-        function state_Change()
-        {
-            if (xmlhttp.readyState==4)
-            {// 4 = "loaded"
-                if (xmlhttp.status==200)
-                {// 200 = "OK"
-                    document.getElementById('p1').innerHTML="This file was last modified on: " + xmlhttp.getResponseHeader('Last-Modified');
+        function state_Change() {
+            if (xmlhttp.readyState == 4) {// 4 = "loaded"
+                if (xmlhttp.status == 200) {// 200 = "OK"
+                    document.getElementById('p1').innerHTML = "This file was last modified on: " + xmlhttp.getResponseHeader('Last-Modified');
                 }
-                else
-                {
+                else {
                     alert("Problem retrieving data:" + xmlhttp.statusText);
                 }
             }
         }
+
     </script>
 </head>
 <body>
