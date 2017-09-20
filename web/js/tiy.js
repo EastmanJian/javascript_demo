@@ -33,6 +33,8 @@ function submitCodes() {
     codes = codes.replace(/script/gi, "eastmanJsTag");
 
     document.getElementById("code").value = codes;
-    document.getElementById("ctrlForm").submit();
+    document.getElementById("viewResult").submit();
 }
 
+
+window.addEventListener("load", loadSample, true);
