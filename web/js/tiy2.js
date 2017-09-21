@@ -2,7 +2,7 @@
  * Load sample html codes to the textarea for edit and test
  */
 function loadSample() {
-    var url = document.getElementById("sample").value;
+    var url = document.getElementById("sampleUrl").value;
     if (!url || url == "null") {  //jsp returns a string "null" if the parameter is empty.
         url = "./basic/default_sample.html";
     }
@@ -25,22 +25,16 @@ function loadSample() {
  */
 function submitCodes() {
     var codes = document.getElementById("testCode").value;
-
-    /* Avoid the browser (Chrome)'s XSS auditor's check. If the response is the same as request with script codes, the
-     * browser will block the response. Replace some keywords in the codes. Server side replace them back.
-     */
-    codes = codes.replace(/=/gi, "eastmanEqualSign");
-    codes = codes.replace(/script/gi, "eastmanJsTag");
-
-    document.getElementById("code").value = codes;
-    document.getElementById("viewResult").submit();
+    //massage will sent to the same origin.
+    var trustedOrigin = window.location.origin;
+    document.getElementById("resultFrame").contentWindow.postMessage(codes, trustedOrigin);
 }
 
 /**
  * Load user selected html url and load it.
  */
 function loadCurrentOption() {
-    document.getElementById("sample").value = document.getElementById("urlOptions").value;
+    document.getElementById("sampleUrl").value = document.getElementById("urlOptions").value;
     loadSample();
 }
 

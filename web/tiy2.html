@@ -1,36 +1,30 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%--
-A HTML (CSS, JavaScript) code tester (runner) on web page.
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cmn-Hans-CN" lang="zh-cmn-Hans-CN">
+<!--
+A HTML (CSS, JavaScript) code tester (runner) on web page. Version 2. Using Cross Origin Messaging instead of JSP.
 User can edit the HTML file in the textarea, click the "Code >>> Result" button to view the result on the result page.
 User can select or type a HTML url in the sample box, click "Load Sample" button to load the target HTML and see the result.
-This JSP accept a parameter "sample", whose value should be an url of html file.
-e.g. https://eastmanjian.cn/js_demo/tiy.jsp?sample=https%3A%2F%2Feastmanjian.github.io%2Fjavascript_demo%2Fweb%2Fbasic%2Fdefault_sample.html
---%>
-<%
-    String sample = request.getParameter("sample");
-%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cmn-Hans-CN" lang="zh-cmn-Hans-CN">
+-->
 <head>
     <title>Test It Yourself</title>
     <link rel="shortcut icon" href="/blog/favicon.ico?" type="image/x-icon">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <link rel="stylesheet" type="text/css" href="./css/tiy.css">
-    <script src="./js/tiy.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/tiy.css">
+    <script src="js/tiy2.js"></script>
 </head>
 <body class="main">
 <div id="code_result">
     <textarea id="testCode" wrap="logical">
     </textarea>
-    <iframe name="testResult" src="">
+    <iframe id="resultFrame" name="testResult" src="tiy2_result.html">
     </iframe>
 </div>
 <footer id="ctrl">
-    <input type="hidden" id="sample" name="sample" value="<%=sample%>">
-    <form id="chooseSample" target="_self" method="get" action="tiy.jsp">
-        <input id="urlOptions" list="url_list" name="sample" required="required" placeholder="Choose a sample" />
+    <input type="hidden" id="sampleUrl" name="sample" value="basic/default_sample.html">
+    <form id="chooseSample" target="_self" method="get" action="">
+        <input id="urlOptions" list="url_list" name="sampleChosen" required="required" placeholder="Choose a sample" />
         <datalist id="url_list">
+            <option label="JS - Default Sample" value="basic/default_sample.html"/>
             <option label="JS - Data Type - Object" value="basic/using_object.html"/>
             <option label="JS - Browser Console Output" value="basic/console_output.html"/>
             <option label="JS - document write" value="basic/document_write.html"/>

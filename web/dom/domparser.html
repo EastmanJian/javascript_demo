@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOMParser Demo</title>
+    <script>
+        var htmlString= "<html><head><title>html in a string</title></head><body><h1>someting in body</h1></body></html>";
+        var parser = new DOMParser();
+        var newDoc = parser.parseFromString(htmlString, "text/xml");
+        console.log("html:" + newDoc.getElementsByTagName("html")[0].innerHTML);
+        console.log("head:" + newDoc.getElementsByTagName("head")[0].innerHTML);
+        console.log("body:" + newDoc.getElementsByTagName("body")[0].innerHTML);
+        newDoc.getElementsByTagName("head")[0].remove();
+        var para = newDoc.createElement("p");
+        var node=document.createTextNode("This is a new paragraph.");
+        para.appendChild(node);
+        newDoc.getElementsByTagName("body")[0].appendChild(para);
+        console.log("body modified:" + newDoc.getElementsByTagName("body")[0].innerHTML);
+    </script>
+</head>
+<body>
+<p>a demo of using DOMParser and manipulating DOM object. See the console log (Chrome F12).</p>
+</body>
+</html>

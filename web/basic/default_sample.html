@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <script>
+        function myFunction() {
+            document.getElementById("theDate").innerText = Date();
+        }
+    </script>
+    <style>
+        h1 {color: blue;}
+    </style>
+</head>
 <body>
 <h1>Default Sample</h1>
 <p>This is a paragraph.</p>
 <button onclick="myFunction()">What date is today.</button>
-<p id="theDate"></p>
-<script>
-    function myFunction() {
-        document.getElementById("theDate").innerText = Date();
-    }
-</script>
+<p id="theDate">Current Date shows here</p>
 </body>
 </html>
 

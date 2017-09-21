@@ -64,7 +64,7 @@ form#chooseSample {
     height: 45px;
     border: 0;
     padding: 0;
-    margin: 4px;
+    margin: 3px;
     box-shadow: 3px 3px 3px gray;
 }
 
@@ -74,14 +74,17 @@ form#chooseSample input[list] {
     -webkit-box-sizing: border-box;
     width: 100%;
     height: 50%;
+    margin: 0;
 }
 
-form#chooseSample input[type=submit] {
+form#chooseSample input#loadOption{
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     width: 100%;
     height: 50%;
+    margin: 0;
+    text-shadow: 1px 1px 1px gray;
     cursor: pointer;
 }
 
@@ -109,6 +112,7 @@ form#viewResult input {
     font-size: large;
     font-weight: bolder;
     cursor: pointer;
+    text-shadow: 2px 2px 2px gray;
 }
 
 a.ej_link {
