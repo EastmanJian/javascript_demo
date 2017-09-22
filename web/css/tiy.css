@@ -1,51 +1,12 @@
 body.main {
-    background: linear-gradient(to bottom, lightgray, ghostwhite, lightgray);
+    background: linear-gradient(to bottom, #bfbfbf, #e0e0e7, #bfbfbf);
     height:100px;
 }
 
-div#code_result {
+header#ctrl {
     position: absolute;
     left: 2px;
-    bottom: 55px;
-    top: 2px;
-    right: 2px;
-    min-height: 100px;
-    border: 0;
-    padding: 0;
-    margin: 0;
-}
-
-#testCode {
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    float: left;
-    width: 49%;
-    height: 100%;
-    padding: 0;
-    margin: 0 5px 5px 0;
-    resize: none;
-    box-shadow: 3px 3px 3px gray;
-}
-
-iframe {
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    float: left;
-    width: 49%;
-    height: 100%;
-    padding: 0;
-    margin: 0 5px 5px 3px;
-    background-color: white;
-    border: 1px solid gray;
-    box-shadow: 3px 3px 3px gray;
-}
-
-footer#ctrl {
-    position: absolute;
-    left: 2px;
-    bottom: 2px;
+    top: 0px;
     right: 2px;
     height: 51px;
     border: 0;
@@ -171,9 +132,48 @@ p#description {
     margin:0;
     font-size: smaller;
     text-align: center;
-    text-shadow: 1px 1px 1px white;
+    text-shadow: 2px 2px 1px white;
     color: gray;
     font-family:Arial,Verdana,Sans-serif;
     line-height:80%;
 
+}
+
+div#code_result {
+    position: absolute;
+    left: 2px;
+    top: 55px;
+    bottom: 5px;
+    right: 2px;
+    min-height: 100px;
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+#testCode {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    float: left;
+    width: 49%;
+    height: 100%;
+    padding: 0;
+    margin: 0 5px 5px 0;
+    resize: none;
+    box-shadow: 3px 3px 3px gray;
+}
+
+iframe {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    float: left;
+    width: 49%;
+    height: 100%;
+    padding: 0;
+    margin: 0 5px 5px 3px;
+    background-color: white;
+    border: 1px solid gray;
+    box-shadow: 3px 3px 3px gray;
 }

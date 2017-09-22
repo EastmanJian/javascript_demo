@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Example of global variable, automatically global</h1>
+<p>
+    In HTML, the global scope is the window object: All global variables belong to the window object.
+</p>
+<p id="output"></p>
+<script>
+    function myFunction() {
+        carName = "Volvo"; //this will become a global variable
+        var engineNum = "68389727";
+    }
+
+    myFunction();
+
+    var txt ="";
+    // code here can use window.carName or carName
+    txt += "window.carName = " + window.carName + "<br/>";
+    txt += "carName = " + carName + "<br/>";
+    txt += "typeof engineNum = " + typeof engineNum + "<br/>";
+
+    document.getElementById("output").innerHTML = txt ;
+</script>
+</body>
+</html>

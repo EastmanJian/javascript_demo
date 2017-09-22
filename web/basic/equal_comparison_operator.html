@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<h1>equal comparison operator</h1>
+<p id="output"></p>
+<script>
+    var x = 5;
+    var b = (x == 5);
+    var txt ="";
+    txt += "x = " + x + "<br/>";
+    txt += "b = (x==5)" + "<br/>";
+    txt += "type of b is " + (typeof b) + "<br/>";
+    txt += "b = " + b + "<br/>";
+    txt += "<br/>";
+
+    b = (x == "5");
+    txt += 'b = (x=="5")' + "<br/>";
+    txt += "b = " + b + "<br/>";
+    txt += "<br/>";
+
+    b = (x === "5");
+    txt += 'b = (x==="5")' + "<br/>";
+    txt += "b = " + b + "<br/>";
+
+    document.getElementById("output").innerHTML = txt ;
+</script>
+</body>
+</html>
+

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        var person={fname:"Bill",lname:"Gates",age:56};
+        var x;
+        var txt="";
+        function deleteAge() {
+            delete person.age;
+            txt = "";
+            for (x in person) {
+                txt=txt + x + ":" + person[x] + "<br/>";
+            }
+            document.getElementById("after").innerHTML=txt;
+        }
+    </script>
+</head>
+<body>
+<h2>The 'delete' operator - delete property from an object</h2>
+<h3>Before</h3>
+<p id="before"></p>
+<script>
+    for (x in person) {
+        txt=txt + x + ":" + person[x] + "<br/>";
+    }
+    document.getElementById("before").innerHTML=txt;
+</script>
+<button onclick="deleteAge()">Click me to delete age properties of the person</button>
+<h3>After delete age</h3>
+<p id="after"></p>
+</body>
+</html>

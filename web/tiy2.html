@@ -13,19 +13,13 @@ User can select or type a HTML url in the sample box, click "Load Sample" button
     <script src="js/tiy2.js"></script>
 </head>
 <body class="main">
-<div id="code_result">
-    <textarea id="testCode" wrap="logical">
-    </textarea>
-    <iframe id="resultFrame" name="testResult" src="tiy2_result.html">
-    </iframe>
-</div>
-<footer id="ctrl">
+<header id="ctrl">
     <input type="hidden" id="sampleUrl" name="sample" value="basic/default_sample.html">
     <form id="chooseSample" target="_self" method="get" action="">
         <input id="urlOptions" list="url_list" name="sampleChosen" required="required" placeholder="Choose a sample" />
         <datalist id="url_list">
             <option label="JS - Default Sample" value="basic/default_sample.html"/>
-            <option label="JS - Data Type - Object" value="basic/using_object.html"/>
+            <option label="JS - Data Type - Object" value="object/using_object.html"/>
             <option label="JS - Browser Console Output" value="basic/console_output.html"/>
             <option label="JS - document write" value="basic/document_write.html"/>
             <option label="JS - document overwrite" value="basic/document_overwrite.html"/>
@@ -41,6 +35,12 @@ User can select or type a HTML url in the sample box, click "Load Sample" button
         <p id="subject">Test It Yourself</p>
         <p id="description">HTML (CSS, Javascript) web page runner.</p>
     </div>
-</footer>
+</header>
+<div id="code_result">
+    <textarea id="testCode" wrap="logical">
+    </textarea>
+    <iframe id="resultFrame" name="testResult" src="tiy2_result.html">
+    </iframe>
+</div>
 </body>
 </html>

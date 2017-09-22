@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+    //Using an object literal to create object
+    var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+
+    //or separate lines
+    var person = {
+        firstname: "Bill",
+        lastname: "Gates",
+        id: 5566
+    };
+    document.write(person.firstname + "<br />");
+    document.write(person["lastname"] + "<br />");
+
+    //use keyword new to create object
+    person=new Object();
+    person.firstname="Bill";
+    person.lastname="Gates";
+    person.age=56;
+    person.eyecolor="blue";
+
+    //Use constructor to create object.
+    function Person(first, last, age, eyecolor) {
+        this.firstName = first;
+        this.lastName = last;
+        this.age = age;
+        this.eyeColor = eyecolor;
+    }
+    Person.prototype.getAge = function(){
+        return this.age;
+    }
+    Person.prototype.getName = function(){
+        return this.firstName + " " + this.lastName;
+    }
+
+    var myFather = new Person("John", "Doe", 50, "blue");
+    var myMother = new Person("Sally", "Rally", 48, "green");
+
+    //access the object's property, constructor, method
+    console.log("My father is " + myFather.age + " years old");
+    console.log("My mother's eye color is " + myMother["eyeColor"]);
+    console.log(myFather.constructor);
+    console.log("My mother's full name is " + myMother.getName());
+
+    //access string's length property
+    var message="Hello World!";
+    var x=message.length;
+    console.log("message length = " + x);
+</script>
+<p>See console log for more output.</p>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+    //create a constructor, add a changeName method inside.
+    function person(first, last, age, eyecolor) {
+        this.firstName = first;
+        this.lastName = last;
+        this.age = age;
+        this.eyeColor = eyecolor;
+        this.changeName=changeName;
+        function changeName(name)
+        {
+            this.lastName=name;
+        }
+    }
+
+    //add getter methods using prototype
+    person.prototype.getAge = function(){
+        return this.age;
+    }
+    person.prototype.getName = function(){
+        return this.firstName + " " + this.lastName;
+    }
+
+    //create objects using constructor
+    var myFather = new person("John", "Doe", 50, "blue");
+    var myMother = new person("Sally", "Rally", 48, "green");
+
+    //use the changeName method
+    myMother.changeName("Kit");
+
+    //add additional property for myFather
+    myFather.tel = "46709394";
+
+    //add additional method for myMother
+    function say(msg) {
+        return "I want to say " + msg + ".";
+    }
+    myMother.say = say;
+
+    //access the object's property, constructor, method
+    console.log("My father is " + myFather.age + " years old");
+    console.log("My mother's eye color is " + myMother["eyeColor"]);
+    console.log("myFather's constructor = " + myFather.constructor);
+    console.log("My mother's full name is " + myMother.getName());
+    console.log("My mother's last name is " + myMother.lastName);
+    console.log("My father's tel  is " + myFather.tel);
+    console.log(myMother.say("good morning"));
+
+
+</script>
+<p>See console log for more output.</p>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p>Object are mutable: They are addressed by reference, not by value.</p>
+<script>
+    var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"}
+    console.log("age before = " + person.age);
+    var x = person
+    x.age = 10;  // This will change both x.age and person.age
+    console.log("age after = " + person.age);
+</script>
+<p>See console log for more output.</p>
+</body>
+</html>

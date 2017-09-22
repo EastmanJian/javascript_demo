@@ -20,18 +20,13 @@ e.g. https://eastmanjian.cn/js_demo/tiy.jsp?sample=https%3A%2F%2Feastmanjian.git
     <script src="./js/tiy.js"></script>
 </head>
 <body class="main">
-<div id="code_result">
-    <textarea id="testCode" wrap="logical">
-    </textarea>
-    <iframe name="testResult" src="">
-    </iframe>
-</div>
-<footer id="ctrl">
+<header id="ctrl">
     <input type="hidden" id="sample" name="sample" value="<%=sample%>">
     <form id="chooseSample" target="_self" method="get" action="tiy.jsp">
         <input id="urlOptions" list="url_list" name="sample" required="required" placeholder="Choose a sample" />
         <datalist id="url_list">
-            <option label="JS - Data Type - Object" value="basic/using_object.html"/>
+            <option label="JS - Default Sample" value="basic/default_sample.html"/>
+            <option label="JS - Data Type - Object" value="object/using_object.html"/>
             <option label="JS - Browser Console Output" value="basic/console_output.html"/>
             <option label="JS - document write" value="basic/document_write.html"/>
             <option label="JS - document overwrite" value="basic/document_overwrite.html"/>
@@ -47,6 +42,12 @@ e.g. https://eastmanjian.cn/js_demo/tiy.jsp?sample=https%3A%2F%2Feastmanjian.git
         <p id="subject">Test It Yourself</p>
         <p id="description">HTML (CSS, Javascript) web page runner.</p>
     </div>
-</footer>
+</header>
+<div id="code_result">
+    <textarea id="testCode" wrap="logical">
+    </textarea>
+    <iframe name="testResult" src="">
+    </iframe>
+</div>
 </body>
 </html>

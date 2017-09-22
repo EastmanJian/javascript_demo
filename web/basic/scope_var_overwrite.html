@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<h1>variables overwrite window variables</h1>
+<p>
+    Your global variables, or functions, can overwrite window variables or functions.
+    Anyone, inclusive the window object, can overwrite your global variables or functions.
+    In HTML, the global scope is the window object: All global variables belong to the window object.
+</p>
+<p id="output"></p>
+<script>
+    var txt ="";
+    txt += "typeof window.innerWidth is " + typeof window.innerWidth + "<br/>";
+    txt += "window.innerWidth is " + window.innerWidth + "<br/>";
+    txt += "typeof innerWidth is " + typeof innerWidth + "<br/>";
+    txt += "innerWidth is " + innerWidth + "<br/>";
+    var innerWidth = true;
+    txt += "var innerWidth = true;" + "<br/>";
+    txt += "innerWidth = " + innerWidth + "<br/>";
+    txt += "window.innerWidth = " + window.innerWidth + "<br/>";
+    txt += "typeof innerWidth is " + typeof innerWidth + "<br/>";
+    txt += "typeof window.innerWidth is " + typeof window.innerWidth + "<br/>";
+    txt += "<br/>";
+    
+    document.getElementById("output").innerHTML = txt ;
+</script>
+</body>
+</html>

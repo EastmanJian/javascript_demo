@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<h1>variable data type can be changed at runtime</h1>
+<p id="output"></p>
+<script>
+    var txt ="";
+    var b = false;
+    txt += "var b = false;" + "<br/>";
+    txt += "typeof b is " + typeof b + "<br/>";
+    b = 5;
+    txt += "b = 5;" + "<br/>";
+    txt += "typeof b is " + typeof b + "<br/>";
+
+    document.getElementById("output").innerHTML = txt ;
+</script>
+</body>
+</html>
+
