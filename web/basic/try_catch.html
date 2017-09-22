@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Error Handling Demo - try catch</h2>
+<p>the onclick function access an undefined variable</p>
+<button type="button" onclick="myFunction()">Test Input</button>
+<p id="message"></p>
+<script>
+    function myFunction() {
+        var txt = "";
+        try {
+            txt += "try to access " + anUndefinedVar;
+        }
+        catch(err) {
+            console.log(typeof err); // -> object
+            message.innerHTML = err;
+        }
+    }
+</script>
+</body>
+</html>
