@@ -26,6 +26,7 @@ e.g. https://eastmanjian.cn/js_demo/tiy.jsp?sample=https%3A%2F%2Feastmanjian.git
         <input id="urlOptions" list="url_list" name="sample" required="required" placeholder="Choose a sample" />
         <datalist id="url_list">
             <option label="JS - Default Sample" value="basic/default_sample.html"/>
+            <option label="JS - TIY template" value="js_tiy_template.html"/>
             <option label="JS - Data Type - Object" value="object/using_object.html"/>
             <option label="JS - Browser Console Output" value="basic/console_output.html"/>
             <option label="JS - document write" value="basic/document_write.html"/>

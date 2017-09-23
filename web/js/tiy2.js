@@ -1,4 +1,18 @@
 /**
+ * When page initiates, check if there is local storage.
+ * If yes, load the testing script from local storage.
+ * If no, call loadSample(), it loads the default sample.
+ */
+function loadWindow() {
+    if (localStorage.codes) {
+        document.getElementById("testCode").value = localStorage.codes
+        submitCodes();
+    } else {
+        loadSample();
+    }
+}
+
+/**
  * Load sample html codes to the textarea for edit and test
  */
 function loadSample() {
@@ -38,4 +52,4 @@ function loadCurrentOption() {
     loadSample();
 }
 
-window.addEventListener("load", loadSample, true);
+window.addEventListener("load", loadWindow, true);
