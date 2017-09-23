@@ -39,6 +39,9 @@ function loadSample() {
  */
 function submitCodes() {
     var codes = document.getElementById("testCode").value;
+    //save the codes in local storage for loading next time
+    localStorage.codes = codes;
+
     //massage will sent to the same origin.
     var trustedOrigin = window.location.origin;
     document.getElementById("resultFrame").contentWindow.postMessage(codes, trustedOrigin);
