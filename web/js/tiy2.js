@@ -5,7 +5,7 @@
  */
 function loadWindow() {
     if (localStorage.codes) {
-        document.getElementById("testCode").value = localStorage.codes
+        document.getElementById("testCode").value = localStorage.codes;
         submitCodes();
     } else {
         loadSample();

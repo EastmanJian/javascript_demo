@@ -5,7 +5,7 @@
  */
 function loadWindow() {
     if (localStorage.codes) {
-        document.getElementById("testCode").value = localStorage.codes
+        document.getElementById("testCode").value = localStorage.codes;
         submitCodes();
     } else {
         loadSample();
@@ -60,5 +60,7 @@ function loadCurrentOption() {
     document.getElementById("sample").value = document.getElementById("urlOptions").value;
     loadSample();
 }
+
+
 
 window.addEventListener("load", loadWindow, true);
