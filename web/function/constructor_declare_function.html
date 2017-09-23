@@ -1,0 +1,14 @@
+<html>
+<head>
+</head>
+<body>
+<h2>Using constructor to define a function</h2>
+<p id="output"></p>
+<script>
+    var myFunction = new Function("a", "b", "return a * b");
+    var x = myFunction(4, 3);
+
+    document.getElementById("output").innerText = x;
+</script>
+</body>
+</html>

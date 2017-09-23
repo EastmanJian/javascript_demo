@@ -1,0 +1,18 @@
+<html>
+<head>
+</head>
+<body>
+<h2>function.toString() demo</h2>
+<p id="output"></p>
+<script type="text/javascript">
+    function myFunction(a, b) {
+        return a * b;
+    }
+
+    var txt = myFunction.toString();
+
+    document.getElementById("output").innerText = txt;
+    console.log(txt);
+</script>
+</body>
+</html>

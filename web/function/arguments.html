@@ -1,0 +1,36 @@
+<html>
+<head>
+</head>
+<body>
+<h2>Function - using arguments object</h2>
+<p id="output"></p>
+<script>
+    var x = findMax(1, 123, 500, 115, 44, 88);
+    var txt = "1, 123, 500, 115, 44, 88 <br/>"
+    txt += "max = " + x + "<br/>";
+
+    x = sumAll(1, 123, 500, 115, 44, 88);
+    txt += "sum = " + x;
+    document.getElementById("output").innerHTML = txt;
+
+    function findMax() {
+        var i, max = 0;
+        for(i = 0; i < arguments.length; i++) {
+            if (arguments[i] > max) {
+                max = arguments[i];
+            }
+        }
+        return max;
+    }
+
+    function sumAll() {
+        var a, sum = 0;
+        for(a in arguments) {
+            console.log(a + ":" + arguments[a]);
+            sum += arguments[a];
+        }
+        return sum;
+    }
+</script>
+</body>
+</html>

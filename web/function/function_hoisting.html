@@ -1,0 +1,17 @@
+<html>
+<head>
+</head>
+<body>
+<h2>Function Hoisting</h2>
+<p id="output"></p>
+<script>
+    x = myFunction(5);
+
+    function myFunction(y) {
+        return y * y;
+    }
+
+    document.getElementById("output").innerText = x;
+</script>
+</body>
+</html>
