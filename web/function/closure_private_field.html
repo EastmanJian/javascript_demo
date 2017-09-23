@@ -1,0 +1,23 @@
+<html>
+<head>
+</head>
+<body>
+<h2>Closure - private field of a function</h2>
+<p id="output"></p>
+<script>
+    //the closure
+    function f1() {
+        var n = 999; //the private field
+        function f2() { //outside codes assess the private field by this function
+            return n;
+        }
+        return f2;
+    }
+    var result = f1();
+
+    //use the closure
+    var txt = "result() = " + result();
+    document.getElementById("output").innerHTML = txt;
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<html>
+<head>
+</head>
+<body>
+<h2>Closure - implement a global counter</h2>
+<p>Using self-invoking function to define the parent function, and expression to define the nested function in this closure example.</p>
+<p id="output"></p>
+<script>
+    //define a closure
+    var add = (function () { //parent function - self-invoking
+        var counter = 0; //private variable
+        return function () {return counter += 1;} //the nested function, declared by expression.
+    })();
+
+    //use the closure
+    var txt="1st time invoke add(): " + add() + "<br/>";
+    txt+="2nd time invoke add(): " + add() + "<br/>";
+    txt+="3rd time invoke add(): " + add() + "<br/>";
+
+    document.getElementById("output").innerHTML = txt;
+</script>
+</body>
+</html>
