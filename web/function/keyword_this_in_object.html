@@ -1,0 +1,28 @@
+<html>
+<head>
+</head>
+<body>
+<h2>this keyword in an object</h2>
+<p id="output"></p>
+<script>
+    var myObject = {
+        firstName:"John",
+        lastName: "Doe",
+        fullName: function() {
+            return this;
+        }
+    }
+
+    var fName = myObject.fullName();
+    console.log(fName);
+
+    var txt="" + fName + "<br/>";
+    //traverse fName
+    for (e in fName) {
+        txt += e + ":" + fName[e] + "<br/>";
+    }
+
+    document.getElementById("output").innerHTML = txt;
+</script>
+</body>
+</html>

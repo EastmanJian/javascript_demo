@@ -1,0 +1,26 @@
+<html>
+<head>
+</head>
+<body>
+<h2>Using call() or apply() to invoke a function, change this keyword's value to a target object</h2>
+<p id="output"></p>
+<script>
+    function myFunction(a, b) {
+        this.answer = a * b;
+        return this;
+    }
+
+    var myObject = {name: "result object"};
+    result = myFunction.call(myObject, 10, 2); //result is myObject
+
+    var txt="result = " + result + "<br/>";
+    txt +="result.answer = " + result.answer + "<br/>";
+    //traverse the object result
+    for (e in result) {
+        txt += e + ":" + result[e] + "<br/>";
+    }
+
+    document.getElementById("output").innerHTML = txt;
+</script>
+</body>
+</html>

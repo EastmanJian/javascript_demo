@@ -1,0 +1,29 @@
+<html>
+<head>
+</head>
+<body>
+<h2>this keyword in a constructor</h2>
+<p id="output"></p>
+<script>
+    //constructor:
+    function myFunction(arg1, arg2) {
+        this.firstName = arg1;
+        this.lastName  = arg2;
+        this.myself = this;
+    }
+
+    // A constructor invocation creates a new object.
+    var x = new myFunction("John","Doe");
+
+    console.log(x.myself);
+
+    var txt="x.myself = " + x.myself + "<br/>";
+    //traverse the object x.myself
+    for (e in x.myself) {
+        txt += e + ":" + x.myself[e] + "<br/>";
+    }
+
+    document.getElementById("output").innerHTML = txt;
+</script>
+</body>
+</html>
