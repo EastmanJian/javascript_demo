@@ -1,0 +1,30 @@
+<html>
+<head>
+</head>
+<body>
+<h2>Number Infinity</h2>
+<p id="output"></p>
+<script>
+    var txt="";
+
+    var myNumber = 2;
+    txt += myNumber + "<br/>";
+    while (myNumber != Infinity) {          // Execute until Infinity
+        txt += myNumber + " x " + myNumber + " = ";
+        myNumber = myNumber * myNumber;
+        txt += myNumber + "<br/>";
+    }
+    txt += "<br/>";
+
+    var x =  2 / 0;          // x will be Infinity
+    var y = -2 / 0;          // y will be -Infinity
+    txt += "2 / 0 = " + x + "<br/>";
+    txt += "-2 / 0 = " + y + "<br/>";
+    txt += "<br/>";
+
+    txt += "typeof Infinity is " + typeof Infinity  + "<br/>";
+
+    document.getElementById("output").innerHTML = txt;
+</script>
+</body>
+</html>
