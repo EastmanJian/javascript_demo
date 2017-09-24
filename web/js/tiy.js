@@ -1,10 +1,12 @@
 /**
- * When page initiates, check if there is local storage.
+ * When page initiates, load the html in the get parameter on priority.
+ * if there is no GET parameter, check if there is local storage.
  * If yes, load the testing script from local storage.
  * If no, call loadSample(), it loads the default sample.
  */
 function loadWindow() {
-    if (localStorage.codes) {
+    var url = document.getElementById("sample").value;
+    if (url == "null" && localStorage.codes) {
         document.getElementById("testCode").value = localStorage.codes;
         submitCodes();
     } else {

@@ -1,0 +1,24 @@
+<html>
+<head>
+</head>
+<body>
+<h2>attributes of a property</h2>
+<p>get the attributes of an object's property</p>
+<p id="output"></p>
+<script>
+    var person = {fname: "John", lname: "Doe", age: 25};
+
+    var txt = "";
+    //get the attributes of property person.fname
+    var fnameAttr = Object.getOwnPropertyDescriptor(person, 'fname');
+
+    console.log(fnameAttr);
+
+    for (a in fnameAttr) {
+        txt += a + ":" + fnameAttr[a] + "<br/>";
+    }
+
+    document.getElementById("output").innerHTML = txt;
+</script>
+</body>
+</html>

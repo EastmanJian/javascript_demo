@@ -1,0 +1,58 @@
+<html>
+<head>
+</head>
+<body>
+<h2>delete property</h2>
+<p>delete inherited property and prototype property</p>
+<p id="output"></p>
+<script>
+    function Person(first, last, age, eyecolor) {
+        this.firstName = first;
+        this.lastName = last;
+        this.age = age;
+        this.eyeColor = eyecolor;
+        this.nationality = "America";
+    }
+    Person.prototype.getAge = function () {
+        return this.age;
+    }
+    Person.prototype.getName = function () {
+        return this.firstName + " " + this.lastName;
+    }
+
+    var myFather = new Person("John", "Doe", 50, "blue");
+    var myMother = new Person("Sally", "Rally", 48, "green");
+
+    var txt = "";
+    txt += "[myFather]<br/>"
+    for (x in myFather) {
+        txt += x + ":" + myFather[x] + "<br/>";
+    }
+
+    txt += "<br/> try to delete inherited properties firstName and nationality from object myFather<br/>";
+    delete myFather.firstName;
+    delete myFather.nationality;
+
+    txt += "[myFather]<br/>"
+    for (x in myFather) {
+        txt += x + ":" + myFather[x] + "<br/>";
+    }
+
+    txt += "<br/> try to delete a property from the prototype - lastName<br/>";
+
+    delete Person.prototype.lastName;
+    txt += "[myFather]<br/>"
+    for (x in myFather) {
+        txt += x + ":" + myFather[x] + "<br/>";
+    }
+    txt += "<br/>";
+    txt += "[myMother]<br/>"
+    for (x in myMother) {
+        txt += x + ":" + myMother [x] + "<br/>";
+    }
+
+
+    document.getElementById("output").innerHTML = txt;
+</script>
+</body>
+</html>
