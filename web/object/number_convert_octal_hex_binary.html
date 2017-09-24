@@ -1,0 +1,18 @@
+<html>
+<head>
+</head>
+<body>
+<h2>Numbers system conversion</h2>
+<p id="output"></p>
+<script>
+    var txt="";
+
+    var myNumber = 128;
+    txt += "hex of 128 = " + myNumber.toString(16) + "<br/>";     // returns 80
+    txt += "octal of 128 = " + myNumber.toString(8) + "<br/>";      // returns 200
+    txt += "binary of 128 = " + myNumber.toString(2) + "<br/>";      // returns 10000000
+
+    document.getElementById("output").innerHTML = txt;
+</script>
+</body>
+</html>
