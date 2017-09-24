@@ -51,8 +51,13 @@ function submitCodes() {
  * Load user selected html url and load it.
  */
 function loadCurrentOption() {
-    document.getElementById("sampleUrl").value = document.getElementById("urlOptions").value;
-    loadSample();
+    var currentOption = document.getElementById("urlOptions");
+    if (currentOption.checkValidity()) {
+        document.getElementById("sample").value = currentOption.value;
+        loadSample();
+    } else {
+        currentOption.focus();
+    }
 }
 
 window.addEventListener("load", loadWindow, true);

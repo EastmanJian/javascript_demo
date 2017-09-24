@@ -23,7 +23,7 @@ e.g. https://eastmanjian.cn/js_demo/tiy.jsp?sample=https%3A%2F%2Feastmanjian.git
 <header id="ctrl">
     <input type="hidden" id="sample" name="sample" value="<%=sample%>">
     <form id="chooseSample" target="_self" method="get" action="tiy.jsp">
-        <input id="urlOptions" list="url_list" name="sample" required="required" placeholder="Choose a sample" />
+        <input id="urlOptions" list="url_list" name="sample" required="required" placeholder="Choose a sample or input a URL" />
         <datalist id="url_list">
             <option label="JS - Default Sample" value="basic/default_sample.html"/>
             <option label="JS - TIY template" value="js_tiy_template.html"/>
