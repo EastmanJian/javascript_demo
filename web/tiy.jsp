@@ -31,6 +31,7 @@ e.g. https://eastmanjian.cn/js_demo/tiy.jsp?sample=https%3A%2F%2Feastmanjian.git
             <option label="JS - Browser Console Output" value="basic/console_output.html"/>
             <option label="JS - document write" value="basic/document_write.html"/>
             <option label="JS - document overwrite" value="basic/document_overwrite.html"/>
+            <option label="JS - document overwrite" value="bom/clock.html"/>
         </datalist>
         <input id="loadOption" type="button" value="Load Sample" onclick="loadCurrentOption();"/>
     </form>
