@@ -1,0 +1,29 @@
+<html>
+<head>
+</head>
+<body>
+<h2>Number - NaN(Not a Number), isNaN()</h2>
+<p id="output"></p>
+<script>
+    var x = 100 / "Apple";  // a number divided by a string is not a number
+    var y = 100 / "10";     // a number divided by a numeric string is a number
+    var z1 = "100" / "10";     // a numeric  string divided by a numeric string is a number
+    var z2 = "100" * "10";     // a numeric  string multiplied by a numeric string is a number
+    var z3 = "100" + "10";     // a numeric  string plus a numeric string is not a number
+    var z4 = "100" - "10";     // a numeric  string minus a numeric string is a number
+Number(true);
+    var txt="";
+    txt += "x is " + x + "<br/>";
+    txt += "y is " + y + "<br/>";
+    txt += "z1 is " + z1 + "<br/>";
+    txt += "z2 is " + z2 + "<br/>";
+    txt += "z3 is " + z3 + "<br/>";
+    txt += "z4 is " + z4 + "<br/>";
+    txt += "isNaN(1000 / 0) = " + isNaN(1000 / 0) + "<br/>"; //Infinity is a number.
+    txt += "typeof NaN is " + typeof NaN + "<br/>";
+    txt += "isNaN(NaN) = " + isNaN(NaN) + "<br/>";
+
+    document.getElementById("output").innerHTML = txt;
+</script>
+</body>
+</html>

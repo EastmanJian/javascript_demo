@@ -1,0 +1,25 @@
+<html>
+<head>
+</head>
+<body>
+<h2>Number - properties</h2>
+<p id="output"></p>
+<script>
+    var x = Number.MAX_VALUE;
+    var y = Number.MIN_VALUE;
+    var a = Number.POSITIVE_INFINITY;
+    var b = Number.NEGATIVE_INFINITY;
+
+    var c = a.MAX_VALUE;    // a becomes undefined, because Number properties belongs to the JavaScript's number object Number only.
+
+    var txt="";
+    txt += "Number.MAX_VALUE = " + x + "<br/>";
+    txt += "Number.MIN_VALUE = " + y + "<br/>";
+    txt += "Number.POSITIVE_INFINITY = " + a + "<br/>";
+    txt += "Number.NEGATIVE_INFINITY = " + b + "<br/>";
+    txt += "a.MAX_VALUE = " + c + "<br/>";
+
+    document.getElementById("output").innerHTML = txt;
+</script>
+</body>
+</html>
