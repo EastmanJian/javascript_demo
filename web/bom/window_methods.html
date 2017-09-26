@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Window Methods</title>
+    <script>
+        function open_win1() {
+            window.open("http://eastmanjian.cn");
+        }
+
+        function open_win2() {
+            window.open("http://eastmanjian.cn", "_blank", "toolbar=yes, location=yes, directories=no,1 " +
+                "status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=400, height=400");
+        }
+
+        function open_win3() {
+            myWindow=window.open("","","left=50, top=50, width=200,height=100,toolbar=no, status=no, menubar=no, scrollbars=yes");
+            myWindow.document.write("This is 'myWindow'");
+            myWindow.focus();
+            setTimeout(function(){myWindow.moveTo(200,100);},1500);
+            setTimeout(function(){myWindow.resizeTo(400,300);},3000);
+            setTimeout(function(){myWindow.close();},4500);
+        }
+    </script>
+</head>
+<body>
+<form>
+    <input type="button" value="Open a new tab with URL" onclick="open_win1()">
+    <br/>
+    <input type="button" value="Open a new featured window with URL" onclick="open_win2()">
+    <br/>
+    <input type="button" value="Open an empty window, write, focus, move, resize, close" onclick="open_win3()">
+</form>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Window Size resize events</title>
+</head>
+<script>
+    function showWidthHeight() {
+        document.getElementById("output").innerHTML = "window.innerWidth = " + window.innerWidth
+            + "</br>" + "window.innerHeight = " + window.innerHeight;
+    }
+
+    window.addEventListener("load", showWidthHeight);
+    window.addEventListener("resize", showWidthHeight); //or window.onresize = showWidthHeight;
+</script>
+<body>
+<h3>Resize the browser window to see the result.</h3>
+<p id="output"></p>
+</body>
+</html>
