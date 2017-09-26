@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>window - popup boxes</title>
+    <script>
+        function alertBox() {
+            alert("I am an alert box!");
+        }
+
+        function confirmBox() {
+            var r = confirm("Press a button");
+            if (r == true) {
+                x = "You pressed OK!";
+            } else {
+                x = "You pressed Cancel!";
+            }
+            document.getElementById("confirmResult").innerHTML=x;
+        }
+
+        function promptBox() {
+            var person = prompt("Please enter your name", "Harry Potter");
+            if (person != null) {
+                document.getElementById("promptInput").innerHTML =
+                    "Hello " + person + "! How are you today?";
+            }
+        }
+    </script>
+</head>
+<body>
+<form>
+    <input type="button" value="Alert" onclick="alertBox()">
+    <br/>
+    <input type="button" value="Confirm" onclick="confirmBox()">
+    <p id="confirmResult"></p>
+    <br/>
+    <input type="button" value="Prompt" onclick="promptBox()">
+    <p id="promptInput"></p>
+</form>
+</body>
+</html>
