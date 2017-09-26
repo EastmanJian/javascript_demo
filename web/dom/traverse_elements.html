@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form id="frm1" action="https://eastmanjian.cn/html5_demo/html5_form_demo.jsp" method="get" autocomplete="on">
+    <input type="submit" value="Submit"/>
+    <input type="submit" formaction="https://eastmanjian.cn/html5_demo/html5_form_admin_demo.jsp"
+           value="Submit as admin"/>
+    <input type="submit" formnovalidate="true" value="Submit without validation"/>
+    Browser: <input list="browsers">
+    <datalist id="browsers">
+        <option value="Internet Explorer">
+        <option value="Firefox">
+        <option value="Chrome">
+        <option value="Opera">
+        <option value="Safari">
+    </datalist>
+    <br/>
+    Webpage: <input type="url" list="url_list" name="link"/>
+    <datalist id="url_list">
+        <option label="W3School" value="http://www.w3school.com.cn"/>
+        <option label="Google" value="http://www.google.com"/>
+        <option label="Microsoft" value="http://www.microsoft.com"/>
+    </datalist>
+    <br/>
+    <input type="submit" formenctype="multipart/form-data"
+           value="Submit as Multipart/form-data">
+    <input type="submit" formmethod="post" formaction="https://eastmanjian.cn/html5_demo/html5_form_demo.jsp"
+           value="Submit using POST">
+    First name: <input type="text" name="fname"><br>
+    Last name: <input type="text" name="lname"><br>
+    <input type="submit" value="Submit as normal">
+    <input type="submit" formtarget="_blank" value="Submit to a new window">
+</form>
+<p id="demo"></p>
+<script>
+    var x = document.getElementById("frm1");
+    var text = "";
+    var i;
+    for (i = 0; i < x.length; i++) {
+        text += x.elements[i].value + "<br>";
+    }
+    document.getElementById("demo").innerHTML = text;
+</script>
+</body>
+</html>

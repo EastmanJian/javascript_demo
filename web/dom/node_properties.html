@@ -1,0 +1,29 @@
+<html>
+<body>
+<h1 id="intro">Node Properties - nodeName, NodeValue, NodeType</h1>
+<script>
+    var intro = document.getElementById("intro");
+    console.log(intro.nodeName); //->H1
+    console.log(intro.nodeValue); // -> null
+    console.log(intro.nodeType); // ->1 (Element)
+    console.log(typeof intro); // -> object
+
+    console.log(intro.childNodes.length); // -> 1
+    console.log(intro.childNodes[0].nodeName); // -> #text
+    console.log(intro.firstChild.nodeValue); // -> Node Properties - nodeName, NodeValue, NodeType
+    console.log(intro.firstChild.nodeType); // -> 3 (Text)
+
+    console.log(intro.id); // -> intro
+    console.log(intro["id"]); // -> intro
+    console.log(intro.id.nodeName); // -> undefined
+    console.log(intro["id"].nodeName); // -> undefined
+    console.log(intro.id.nodeValue); // -> undefined
+    console.log(intro.id.nodeType); // -> undefined
+    console.log(intro.getAttributeNode("id")); // -> id="intro"
+    console.log(intro.getAttributeNode("id").nodeName); // -> id
+    console.log(intro.getAttributeNode("id").nodeValue); // -> intro
+    console.log(intro.getAttributeNode("id").nodeType); // -> 2 (Attribute)
+
+</script>
+</body>
+</html>

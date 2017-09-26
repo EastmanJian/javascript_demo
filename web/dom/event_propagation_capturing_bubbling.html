@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Propagation Demo</title>
+    <style>
+        div {
+            width: 260px;
+            height: 240px;
+            background-color: lightskyblue;
+            border: 1px solid black;
+        }
+
+        p {
+            width: 140px;
+            height: 120px;
+            margin: 60px;
+            background-color: lightpink;
+            border: 1px solid black;
+        }
+
+        textarea {
+            width: 250px;
+            height: 500px;
+            float: right;
+        }
+    </style>
+    <script>
+        function log(msg) {
+            document.getElementById("output").value += msg + "\n";
+        }
+
+        function init() {
+            document.getElementById("bubbDiv").addEventListener("click", function(){log("DIV(bubbling) is clicked.")}, false);
+            document.getElementById("bubbP").addEventListener("click", function(){log("P(bubbling) is clicked.")}, false);
+            document.getElementById("capDiv").addEventListener("click", function(){log("DIV(capturing) is clicked.")}, true);
+            document.getElementById("capP").addEventListener("click", function(){log("P(capturing) is clicked.")}, true);
+        }
+
+        window.addEventListener("load", init);
+    </script>
+</head>
+<body>
+<h1>Event Propagation Demo</h1>
+<textarea id="output">
+logs here:
+</textarea>
+
+<h3>Bubbling (default)</h3>
+<div id="bubbDiv" onclick="bubbDivMsg()">
+    DIV - click me
+    <p id="bubbP">P - click me</p>
+</div>
+
+<h3>Capturing</h3>
+<div id="capDiv">
+    DIV - click me
+    <p id="capP">P - click me</p>
+</div>
+
+</body>
+</html>
