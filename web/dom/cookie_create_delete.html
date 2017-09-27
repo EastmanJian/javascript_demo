@@ -1,0 +1,38 @@
+<html>
+<head>
+    <script>
+        function createCookie1Clicked() {
+            document.cookie="firstname=John; expires=Wed, 18 Dec 2023 12:00:00 GMT";
+            document.getElementById("output").innerHTML = document.cookie;
+        }
+
+        function createCookie2Clicked() {
+            document.cookie="lastname=Smith; expires=Wed, 18 Dec 2023 12:00:00 GMT";
+            document.getElementById("output").innerHTML = document.cookie;
+        }
+
+        function deleteCookie1Clicked() {
+            document.cookie="firstname=; expires=Thu, 01 Jan 1970 00:00:00 GMT;";
+            document.getElementById("output").innerHTML = document.cookie;
+        }
+
+        function deleteCookie2Clicked() {
+            document.cookie="lastname=; expires=Thu, 01 Jan 1970 00:00:00 GMT;";
+            document.getElementById("output").innerHTML = document.cookie;
+        }
+
+        window.addEventListener("load", function(){document.getElementById("output").innerHTML = document.cookie;})
+    </script>
+</head>
+<body>
+<h3>Cookie - create, delete</h3>
+<p>
+    <button type="button" onclick="createCookie1Clicked();">Create Cookie 1</button>&nbsp;
+    <button type="button" onclick="createCookie2Clicked();">Create Cookie 2</button>&nbsp;
+    <button type="button" onclick="deleteCookie1Clicked();">Delete Cookie 1</button>&nbsp;
+    <button type="button" onclick="deleteCookie2Clicked();">Delete Cookie 2</button>
+</p>
+<h4>document.cookie:</h4>
+<p id="output"></p>
+</body>
+</html>
