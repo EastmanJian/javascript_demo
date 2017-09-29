@@ -1,0 +1,15 @@
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("p#version").text("The current jQuery version is " + $().jquery + ".");
+            $("p#length").text("There are " + $("p").length + " p elements in this page.")
+        });
+    </script>
+</head>
+<body>
+<p id="version"></p>
+<p id="length"></p>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<html>
+<head>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(".btn1").click(function(){
+                $("p").toggle(true);
+            });
+        });
+    </script>
+</head>
+<body>
+<p>This is a paragraph.</p>
+<p style="display:none">This is another paragraph.</p>
+<p>change the switch argument to false, it will hide all the paragraphs.</p>
+<button class="btn1">Display all p elements</button>
+</body>
+</html>

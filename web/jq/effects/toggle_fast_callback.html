@@ -1,0 +1,19 @@
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("button").click(function(){
+                $("p").toggle("fast", function(){
+                    $("body").css("background-color","gray");
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<button type="button">Toggle - fast</button>
+<p>1st Paragraph</p>
+<p>This is another paragraph.</p>
+</body>
+</html>
