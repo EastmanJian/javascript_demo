@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Convert JSON String to JavaScript Object</title>
+</head>
+<body>
+<p id="demo"></p>
+<script>
+    var text = '{' +
+        ' "companyName" : "Sun",' +
+        ' "employees" : [' +
+        '{ "firstName":"John" , "lastName":"Doe" },' +
+        '{ "firstName":"Anna" , "lastName":"Smith" , "contact" : {"address":"Oslo West 16","phone":"555 1234567"} },' +
+        '{ "firstName":"Peter" , "lastName":"Jones" } ]'
+        + '}';
+    var obj = JSON.parse(text); //convert JSON String to Object
+
+    //use a recursive function to traverse all obj properties and print them in a string
+    function traverseObj(obj, nameSpace){
+        nameSpace = nameSpace || "";
+        var txt = "";
+        var name = "";
+        var value;
+        for (n in obj) {
+            if (nameSpace) {
+                name = nameSpace + "." + n;
+            } else {
+                name = n.toString();
+            }
+            value = obj[n];
+            if (typeof value == "object") {
+                txt += traverseObj(value, name);
+            } else {
+                txt += name + ": " + value + "<br/>";
+            }
+        }
+        return txt;
+    }
+
+    console.log(obj); //Browser F12 can view the object in detail
+
+    var output = "Object: <br/>" + traverseObj(obj) + "</br>"; //print all the object properties.
+    output += "JSON: </br>" + JSON.stringify(obj); //convert object to JSON String
+    document.getElementById("demo").innerHTML = output;
+
+</script>
+</body>
+</html>

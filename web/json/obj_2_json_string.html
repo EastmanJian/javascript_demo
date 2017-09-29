@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Convert JavaScript Object to JSON String</title>
+</head>
+<body>
+<p id="demo"></p>
+<script>
+    var obj = {
+        "configs": [
+            {
+                "server": "jp06-50.ssv7.net",
+                "server_port": "20003",
+                "local_port": 1080,
+                "password": "ncAHyeMAhW5K",
+                "method": "aes-256-cfb"
+            },
+            {
+                "server": "sg01-50.ssv7.net",
+                "server_port": "20003",
+                "local_port": 1080,
+                "password": "ncAHyeMAhW5K",
+                "method": "aes-256-cfb"
+            },
+            {
+                "server": "us01-50.ssv7.net",
+                "server_port": "20003",
+                "local_port": 1080,
+                "password": "ncAHyeMAhW5K",
+                "method": "aes-256-cfb"
+            }
+        ],
+        "localPort": 1080,
+        "index": 0,
+        "global": false,
+        "enabled": true,
+        "isDefault": false
+    };
+
+    //use a recursive function to traverse all obj properties and print them in a string
+    function traverseObj(obj, nameSpace){
+        nameSpace = nameSpace || "";
+        var txt = "";
+        var name = "";
+        var value;
+        for (n in obj) {
+            if (nameSpace) {
+                name = nameSpace + "." + n;
+            } else {
+                name = n.toString();
+            }
+            value = obj[n];
+            if (typeof value == "object") {
+                txt += traverseObj(value, name);
+            } else {
+                txt += name + ": " + value + "<br/>";
+            }
+        }
+        return txt;
+    }
+
+    console.log(obj); //Browser F12 can view the object in detail
+
+    var output = "Object: <br/>" + traverseObj(obj) + "</br>"; //print all the object properties.
+
+    //convert object to JSON String. Actually, the JSON String is exactly the same as how the object is defined in JavaScript
+    output += "JSON: </br>" + JSON.stringify(obj);
+    document.getElementById("demo").innerHTML = output;
+
+</script>
+</body>
+</html>
