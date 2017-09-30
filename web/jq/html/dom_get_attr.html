@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                alert($("#ejhome").attr("href"));
+            });
+        });
+    </script>
+</head>
+<body>
+<h3>jQuery HTML DOM - attr() get attribute</h3>
+<p><a href="https://eastmanjian.cn" id="ejhome">eastmanjian.cn</a></p>
+<button>get the href value</button>
+</body>
+</html>
