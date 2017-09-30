@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button.cb").click(function () {
+                $("p.cb").hide(1000, function () {
+                    alert("The paragraph is now hidden");
+                });
+            });
+            $("button.ncb").click(function () {
+                $("p.ncb").hide(1000);
+                alert("The paragraph is now hidden");
+            });
+        });
+    </script>
+</head>
+<body>
+<h3>jQuery callback - executes at the end of the effect</h3>
+<button class="cb" type="button">Hide (Using callback)</button>
+<p class="cb">This is a paragraph with little content.</p>
+<br/>
+<button class="ncb" type="button">Hide (without callback)</button>
+<p class="ncb">This is a paragraph with little content.</p>
+</body>
+</html>
