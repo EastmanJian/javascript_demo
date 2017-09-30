@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".flip").click(function(){
+                $(".panel").slideDown(5000);
+            });
+            $("#stop").click(function(){
+                $(".panel").stop();
+            });
+        });
+    </script>
+    <style type="text/css">
+        div.panel, p.flip {
+            margin: 0px;
+            padding: 5px;
+            text-align: center;
+            background: lightgray;
+            border: solid 1px darkgray;
+        }
+
+        div.panel {
+            height: 120px;
+            overflow: hidden;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<h3>jQuery stop during slideDown</h3>
+<button id="stop">stop</button>
+<p class="flip">Click Me</p>
+<div class="panel">
+    <p>-- Burning --</p>
+    <p>Passion is sweet.
+        Love makes weak.
+        You said you cherished freedom so.
+        You refuse to let it go.
+    </p>
+</div>
+
+</body>
+</html>

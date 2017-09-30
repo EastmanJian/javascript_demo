@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button#queue1").click(function () {
+                var div = $("div.q1");
+                div.animate({height: '300px', opacity: '0.2'}, "slow");
+                div.animate({width: '300px', opacity: '0.8'}, "slow");
+                div.animate({height: '100px', opacity: '0.2'}, "slow");
+                div.animate({width: '100px', opacity: '0.8'}, "slow");
+            });
+            $("button#queue2").click(function () {
+                var div = $("div.q2");
+                div.animate({left: '100px'}, "slow");
+                div.animate({fontSize: '3em'}, "slow");
+            });
+        });
+    </script>
+</head>
+<body>
+<h3>jQuery animate() - queue up the animations</h3>
+<body>
+<section>
+    <button id="queue1">Sample 1 Start</button>
+    <div class="q1" style="background:#98bf21;height:100px;width:100px;position:relative;"></div>
+</section>
+<br/>
+<section>
+    <button id="queue2">Sample 2 Start</button>
+    <div class="q2" style="background:#98bf21;height:100px;width:200px;position:relative;">HELLO</div>
+</section>
+</body>
+</html>
