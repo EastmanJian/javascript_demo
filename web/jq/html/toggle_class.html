@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                $("h1,h2,p").toggleClass("blue");
+            });
+        });
+    </script>
+    <style type="text/css">
+        .blue
+        {
+            color:blue;
+        }
+    </style>
+</head>
+<body>
+<h3>toggle CSS class - toggleClass()</h3>
+<h1>Header 1</h1>
+<h2>Header 2</h2>
+<p>This is a paragraph.</p>
+<p>This is another paragraph</p>
+<div>This is a very important text.</div>
+<br>
+<button>Toggle CSS class</button>
+</body>
+</html>

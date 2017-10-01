@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btnGetCSS").click(function(){
+                alert("Background color = " + $("p").eq(1).css("background-color"));
+            });
+            $("#btnSetCSS").click(function(){
+                $("p").css({"background-color":"yellow","font-size":"200%"});
+            });
+        });
+    </script>
+</head>
+<body>
+<h3>get set CSS - css()</h3>
+<p style="background-color:#ff0000">This is a paragraph.</p>
+<p style="background-color:#00ff00">This is another paragraph</p>
+<p style="background-color:#0000ff">This is the 3rd paragraph.</p>
+<p>This is the 4th paragraph</p>
+<br>
+<button id="btnGetCSS">get CSS for the 2nd paragraph</button>
+<button id="btnSetCSS">set CSS for all paragraphs</button>
+</body>
+</html>
