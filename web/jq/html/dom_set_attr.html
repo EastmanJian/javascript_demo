@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+                $("#jq1").attr("href","https://jqueryui.com/");
+            });
+            $("#btn2").click(function(){
+                $("#jq2").attr({
+                    "href" : "https://jqueryui.com/",
+                    "title" : "jQuery UI"
+                });
+            });
+            $("#btn3").click(function(){
+                $("#jq3").attr("href", function(i,origValue){
+                    return origValue + "/development";
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<h3>set DOM attribute - attr(), multiple attributes, callback</h3>
+<p><a href="http://jquery.com" id="jq1">jquery.com</a></p>
+<button id="btn1">Change the href attribute's value</button>
+
+<p><a href="http://jquery.com" id="jq2" title="jQuery">jquery.com</a></p>
+<button id="btn2">Change the attribute value of href and title</button>
+
+<p><a href="http://jquery.com" id="jq3">jquery.com</a></p>
+<button id="btn3">Change the href using a callback function</button>
+
+
+<p>Please hover the mouse over the link, or just click the link to see if the href attribute is changed.</p>
+</body>
+</html>
