@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("h2.eg1").siblings().css({"color":"red","border":"2px solid red"});
+            $("h2.eg2").siblings("p").css({"color":"green","border":"2px solid green"});
+            $("h2.eg3").next().css({"color":"blue","border":"2px solid blue"});
+            $("h2.eg4").nextAll().css({"color":"darkorange","border":"2px solid darkorange"});
+            $("h2.eg5").nextUntil("h6").css({"color":"purple","border":"2px solid purple"});
+        });
+    </script>
+    <style>
+        .siblings div,p,span,h2,h3,h6 {
+            display: block;
+            border: 2px solid gray;
+            color: grey;
+            padding: 5px;
+            margin: 15px;
+        }
+        .siblings h2 {
+            border: 2px solid black;
+            color: black;
+        }
+
+    </style>
+</head>
+<body class="siblings">
+<h4>traversing siblings - siblings(), next(), nextAll(), nextUntil(), prev(), prevAll(), prevUntil()</h4>
+<div>div (parent)
+    <p>p</p>
+    <span>span</span>
+    <h2 class="eg1">h2 - my siblings() are in red.</h2>
+    <h3>h3</h3>
+    <p>p</p>
+</div>
+
+<div>div (parent)
+    <p>p</p>
+    <span>span</span>
+    <h2 class="eg2">h2 - my siblings("p") are in green.</h2>
+    <h3>h3</h3>
+    <p>p</p>
+</div>
+
+<div>div (parent)
+    <p>p</p>
+    <span>span</span>
+    <h2 class="eg3">h2 - my next() sibling is in blue.</h2>
+    <h3>h3</h3>
+    <p>p</p>
+</div>
+
+<div>div (parent)
+    <p>p</p>
+    <span>span</span>
+    <h2 class="eg4">h2 - my nextAll() siblings are in orange.</h2>
+    <h3>h3</h3>
+    <p>p</p>
+</div>
+
+<div>div (parent)
+    <p>p</p>
+    <h2 class="eg5">h2 - my nextUntil("h6") siblings are in purple.</h2>
+    <h3>h3</h3>
+    <span>span</span>
+    <h6>h6</h6>
+    <p>p</p>
+</div>
+
+</body>
+</html>

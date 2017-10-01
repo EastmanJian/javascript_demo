@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("ul.eg1").children().css({"color":"red","border":"2px solid red"});
+            $("ul.eg2").children("li.c1").css({"color":"green","border":"2px solid green"});
+            $("ul.eg3").find("span").css({"color":"darkorange","border":"2px solid darkorange"});
+            $("ul.eg4").find("*").css({"color":"blue","border":"2px solid blue"});
+        });
+    </script>
+    <style>
+        .descendants * {
+            display: block;
+            border: 2px solid grey;
+            color: grey;
+            padding: 5px;
+            margin: 15px;
+        }
+
+        .descendants ul {
+            width: 450px;
+            color: black;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+<h3>traversing descendants - children(), find()</h3>
+<div class="descendants">
+    <div>div
+        <ul class="eg1">ul - my children() are in red.
+            <li>li (child)
+                <span>span (grandchild)</span>
+            </li>
+            <li>li (child)
+                <span>span (grandchild)</span>
+            </li>
+            <li>li (child)
+            </li>
+        </ul>
+    </div>
+</div>
+<br/>
+
+<div class="descendants">
+    <div>div
+        <ul class="eg2">ul - my children("li.c1") are in green.
+            <li class="c1">li (child)
+                <span>span (grandchild)</span>
+            </li>
+            <li class="c2">li (child)
+            </li>
+        </ul>
+    </div>
+</div>
+<br/>
+
+<div class="descendants">
+    <div>div
+        <ul class="eg3">ul - find("span") from my descendants and mark them in orange
+            <li>li (child)
+                <span>span (grandchild)</span>
+            </li>
+            <li>li (child)
+                <span>span (grandchild)</span>
+            </li>
+        </ul>
+    </div>
+</div>
+<br/>
+
+<div class="descendants">
+    <div>div
+        <ul class="eg4">ul - find("*") all descendants and mark them in blue
+            <li>li (child)
+                <span>span (grandchild)</span>
+            </li>
+            <li>li (child)
+            </li>
+        </ul>
+    </div>
+</div>
+<br/>
+</body>
+</html>

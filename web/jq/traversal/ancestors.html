@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("span.eg1").parent().css({"color": "red", "border": "2px solid red"});
+            $("span.eg2").parents("ul, li, div.eg2").css({"color": "green", "border": "2px solid green"});
+            $("span.eg3").parentsUntil("div").css({"color": "darkorange", "border": "2px solid darkorange"});
+        });
+    </script>
+    <style>
+        .ancestors * {
+            display: block;
+            border: 2px solid grey;
+            color: grey;
+            padding: 5px;
+            margin: 15px;
+        }
+
+        .ancestors > div {
+            width: 450px;
+        }
+
+        .ancestors span {
+            color: black;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+<h3>traversing ancestors - parent(), parents(), parentsUntil()</h3>
+<div class="ancestors">
+    <div>div (great-grandparent)
+        <ul>ul (grandparent)
+            <li>li (parent)
+                <span class="eg1">span - my parent() is in red.</span>
+            </li>
+        </ul>
+    </div>
+
+    <div>div (grandparent)
+        <p>p (parent)
+            <span class="eg1">span - my parent() is in red.</span>
+        </p>
+    </div>
+</div>
+<br/>
+
+<div class="ancestors">
+    <div class="eg2">div (great-grandparent)
+        <ul>ul (grandparent)
+            <li>li (parent)
+                <span class="eg2">span - my parents("li, ul, div") are in green.</span>
+            </li>
+        </ul>
+    </div>
+</div>
+<br/>
+
+<div class="ancestors">
+    <div>div (great-grandparent)
+        <ul>ul (grandparent)
+            <li>li (parent)
+                <span class="eg3">span - my parentsUntil("div") are in yellow.</span>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
