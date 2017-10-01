@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+                $("img").before("<b>Your</b>");
+            });
+
+            $("#btn2").click(function(){
+                $("img").after("<i>Name</i>");
+            });
+
+            $("#btn3").click(function(){
+                var txt1="<b>I </b>";
+                var txt2=$("<i></i>").text("love ");
+                var txt3=document.createElement("big");
+                txt3.innerHTML="this movie!<br/>";
+                $("p").after(txt1,txt2,txt3);
+            });
+        });
+    </script>
+</head>
+<body>
+<h3>add DOM elements or value - before(), after()</h3>
+<button id="btn1">Add text before the image</button>
+<button id="btn2">Add text after the image</button>
+<button id="btn3">Add multiple elements after the p element</button>
+<br><br>
+<img src="img/yourname.jpg" alt="Your Name" />
+<p>2D Cartoon Movie</p>
+</body>
+</html>
