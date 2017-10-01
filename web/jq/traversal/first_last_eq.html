@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("div p").first().css("background-color","yellow");
+            $("div p").last().css("background-color","lightblue");
+            $("p").eq(2).css("background-color","lightgreen");
+        });
+    </script>
+</head>
+<body class="siblings">
+<h3>filtering - first(), last(), eq()</h3>
+<div>
+    <p>This is a paragraph inside a div. [selected by $("div p").first()]</p>
+</div>
+
+<div>
+    <p>This is a paragraph inside another div. [selected by $("div p").last()]</p>
+</div>
+
+<p>This is a paragraph too. [selected by $("p").eq(2)]</p>
+</body>
+</html>

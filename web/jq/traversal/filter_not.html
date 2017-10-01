@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("p").not(".intro").css("background-color","yellow");
+        });
+    </script>
+</head>
+<body class="siblings">
+<h3>filtering - filter(), not()</h3>
+<p>I'm Donald Duck</p>
+<p class="intro">I'm living in Duckburg.</p>
+<p class="intro">I love Duckburg.</p>
+<p>My best friend is Mickey.</p>
+</body>
+</html>
