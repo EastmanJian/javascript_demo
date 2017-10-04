@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                $.post("jq/ajax/demo_test_post.jsp",
+                    {
+                        name:"Donald Duck",
+                        city:"Duckburg"
+                    },
+                    function(data,status){
+                        $("p#output").html("<b>data:</b> " + data + "<br/>" + "<b>status:</b> " + status);
+                    });
+            });
+        });
+    </script>
+</head>
+<body>
+<h3>jQuery AJAX - $.post()</h3>
+<button>send HTTP GET request to the page, get the result from response.</button>
+<p id="output"></p>
+</body>
+</html>

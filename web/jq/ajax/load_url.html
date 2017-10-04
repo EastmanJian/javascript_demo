@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+                $('#test').load('jq/ajax/demo_test.txt');
+            })
+            $("#btn2").click(function(){
+                $('#test').load('jq/ajax/demo_test.txt #p1');
+            })
+            $("#btn3").click(function(){
+                $("#test").load("jq/ajax/demo_test.txt",function(responseTxt,statusTxt,xhr){
+                    if(statusTxt=="success")
+                        alert("load external content successfully with responseTxt: \n" + responseTxt);
+                    if(statusTxt=="error")
+                        alert("Error: "+xhr.status+": "+xhr.statusText);
+                });
+            });
+        })
+    </script>
+</head>
+<body>
+<h3>jQuery AJAX - load()</h3>
+<h3 id="test">The text inside this paragraph will be changed via jQuery AJAX.</h3>
+<button id="btn1" type="button">Click me to load external content</button>
+<button id="btn2" type="button">Click me to load external content with a selector</button>
+<button id="btn3" type="button">Click me to load external content with a callback function</button>
+</body>
+</html>

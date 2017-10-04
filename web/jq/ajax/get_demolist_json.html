@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                console.log("button clicked.")
+                $.getJSON("demo_list.json", function (result) {
+                    console.log(result);
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<h3>jQuery AJAX - $.getJSON() read a demo list json file</h3>
+<button>get JSON data</button>
+<p></p>
+</body>
+</html>

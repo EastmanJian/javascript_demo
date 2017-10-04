@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $.getJSON("https://api.flickr.com/services/feeds/photos_public.gne?tags=cat&tagmode=any&format=json&jsoncallback=?", function (data) {
+                    $.each(data.items, function (i, item) {
+                        $("<img/>").attr("src", item.media.m).appendTo("#images");
+                        if (i == 3) return false;
+                    });
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<h3>jQuery AJAX - $.getJSON() from Flickr JSONP API</h3>
+<button>get latest 4 cat photos from Flickr JSONP API</button>
+<div id="images"></div>
+</body>
+</html>

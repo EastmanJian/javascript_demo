@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Collapsible set - jQuery Mobile Demos</title>
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script> <!-- cannot use jQuery 3.2.1 because jquery.mobile 1.4.5 is not compatible with it.-->
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <style>
+        span {
+            border: 1px solid lightgray;
+            border-radius: 5px;
+            padding: 2px;
+        }
+
+        #main {
+            padding: 10px;
+        }
+    </style>
+    <script>
+        $(function() {
+            $("#btn1").click(function () {
+                $("#folders").append('<div data-role="collapsible"> \
+                        <h3>Fruits</h3> \
+                        <ul data-role="listview" data-inset="true"> \
+                            <li>Apple</li> \
+                            <li>Orange</li> \
+                            <li>Banana</li> \
+                            <li>Pear</li> \
+                        </ul> \
+                    </div>'
+                );
+                $("ul[data-role=listview]").listview(); //initiate the Listview Widget, because refreshing the collapsibleset will not initiate it.
+                //$("div[data-role=collapsible]").collapsible(); //collapsibleset("refresh") will do this, hence it's not required.
+                $("#folders").collapsibleset("refresh");
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="main">
+    <div id="folders" data-role="collapsibleset" data-inset="true">
+        <div data-role="collapsible">
+            <h3>Animals (I have nested collapsible)</h3>
+            <ul data-role="listview" data-inset="true">
+                <div data-role="collapsible">
+                    <h4>Mammal</h4>
+                    <ul data-role="listview" data-inset="true">
+                        <li>Lion</li>
+                        <li>Whale</li>
+                    </ul>
+                </div>
+                <li>Cats</li>
+                <li>Dogs</li>
+                <li>Lizards</li>
+                <li>Snakes</li>
+            </ul>
+        </div>
+        <div data-role="collapsible">
+            <h3>Cars (I have list dividers)</h3>
+            <ul data-role="listview" data-inset="true">
+                <li data-role="list-divider"> category 1</li>
+                <li>Acura</li>
+                <li>Audi</li>
+                <li data-role="list-divider"> category 2</li>
+                <li>BMW</li>
+                <li>Cadillac</li>
+            </ul>
+        </div>
+        <div data-role="collapsible">
+            <h3>Planets (I'm searchable)</h3>
+            <form>
+                <input data-type="search" id="planets-input">
+            </form>
+            <div data-filter="true" data-input="#planets-input" data-children="ul li">
+                <ul data-role="listview" data-inset="true">
+                    <li><span><b>cat1</b></span> - Earth</li>
+                    <li><span><b>cat1</b></span> - Jupiter</li>
+                    <li><span><b>cat2</b></span> - Mars</li>
+                    <li><span><b>cat2</b></span> - Mercury</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br/>
+<button id="btn1" data-role="none">Click me to append collapsible</button>
+</body>
+</html>

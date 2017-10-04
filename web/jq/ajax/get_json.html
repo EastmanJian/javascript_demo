@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $.getJSON("jq/ajax/demo_ajax_json.json", function (result) {
+                    $.each(result, function (i, field) {
+                        $("p").append(i + ": " + field + "<br/>");
+                    });
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<h3>jQuery AJAX - $.getJSON()</h3>
+<button>get JSON data</button>
+<p></p>
+</body>
+</html>

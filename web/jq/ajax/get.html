@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                $.get("jq/ajax/demo_test.jsp",function(data,status){
+                    $("p#output").html("data: " + data + "<br/>" + "status: " + status);
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<h3>jQuery AJAX - $.get()</h3>
+<button>send HTTP GET request to the page, get the result from response.</button>
+<p id="output"></p>
+</body>
+</html>
