@@ -1,3 +1,6 @@
 # IntelliJ .idea folder
 .idea/
 out
+
+#temp files
+web/temp/
