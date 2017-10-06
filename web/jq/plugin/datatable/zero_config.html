@@ -3,9 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>DataTable Zero Config Demo</title>
-    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+    <!-- cdn.datatables.net, the js includes jQuery already -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jq-3.2.1/jq-3.2.1/dt-1.10.16/datatables.min.css"/>
     <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jq-3.2.1/jq-3.2.1/dt-1.10.16/datatables.min.js"></script>
+
+    <!-- http://www.bootcdn.cn/datatables/, need to include jQuery js too.
+    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/datatables/1.10.16/css/dataTables.foundation.min.css"/>
+    <script type="text/javascript" src="https://cdn.bootcss.com/datatables/1.10.16/js/dataTables.foundation.min.js"></script>
+    -->
     <script>
         $(document).ready(function() {
             $('#example').DataTable();

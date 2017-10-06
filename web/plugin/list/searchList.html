@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>listjs demo</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+    <script>
+        function initListSearch() {
+            var options = {
+                valueNames: ['time', 'title', 'categories', 'pageTag']
+            };
+            var userList = new List('articles', options);
+        }
+        window.addEventListener("load", initListSearch);
+    </script>
+</head>
+<body>
+<div id="articles" class="left">
+    <h1>Archives</h1>
+    <hr>
+    <input class="search" placeholder="Search"/>
+    <ul class="list">
+        <h2 id="y2017">2017</h2>
+        <li>
+            <time class="time">
+                2017-05-30 Tue.
+            </time>
+            <a class="title" href="/blog/2017/05/30/java-collection-framework/">Summary of Java Collection Framework</a>
+            <span class="categories">
+            <i class="fa fa-th-list"></i>
+            <a href="/blog/category/#Java" title="Category: Java" rel="category">Java</a>&nbsp;
+            <a href="/blog/category/#IT" title="Category: IT" rel="category">IT</a>
+            </span>
+            <span class="pageTag">
+            <i class="fa fa-tags"></i>
+            <a href="/blog/tag/#java" title="Tag: java" rel="tag">java</a>&nbsp;
+            <a href="/blog/tag/#collection" title="Tag: collection" rel="tag">collection</a>
+            </span>
+        </li>
+        <li>
+            <time class="time">
+                2017-05-29 Mon.
+            </time>
+            <a class="title" href="/blog/2017/05/29/ar-augmented-reality-in-games/">Augmented Reality (AR) - Amazing
+                effects in games</a>
+            <span class="categories">
+            <i class="fa fa-th-list"></i>
+            <a href="/blog/category/#IT" title="Category: IT" rel="category">IT</a>&nbsp;
+            <a href="/blog/category/#AR" title="Category: AR" rel="category">AR</a>
+            </span>
+            <span class="pageTag">
+            <i class="fa fa-tags"></i>
+            <a href="/blog/tag/#AR" title="Tag: AR" rel="tag">AR</a>&nbsp;
+            <a href="/blog/tag/#game" title="Tag: game" rel="tag">game</a>
+            </span>
+        </li>
+        <li>
+            <time class="time">
+                2017-05-25 Thu.
+            </time>
+            <a class="title" href="/blog/2017/05/25/java-using-lambda-to-replace-anonymous-inner-class/">Using Lambda
+                Expression to replace Anonymous Inner Class in Java 1.8</a>
+            <span class="categories">
+            <i class="fa fa-th-list"></i>
+            <a href="/blog/category/#IT" title="Category: IT" rel="category">IT</a>&nbsp;
+            <a href="/blog/category/#Java" title="Category: Java" rel="category">Java</a>
+            </span>
+            <span class="pageTag">
+            <i class="fa fa-tags"></i>
+            <a href="/blog/tag/#java" title="Tag: java" rel="tag">java</a>&nbsp;
+            <a href="/blog/tag/#lambda" title="Tag: lambda" rel="tag">lambda</a>
+            </span>
+        </li>
+        <li>
+            <time class="time">
+                2017-05-24 Wed.
+            </time>
+            <a class="title" href="/blog/2017/05/24/java-local-inner-class-access-local-variable/">Java Local Inner
+                Classes accessing Local Variable in higher Java version</a>
+            <span class="categories">
+            <i class="fa fa-th-list"></i>
+            <a href="/blog/category/#IT" title="Category: IT" rel="category">IT</a>&nbsp;
+            <a href="/blog/category/#Java" title="Category: Java" rel="category">Java</a>
+            </span>
+            <span class="pageTag">
+            <i class="fa fa-tags"></i>
+            <a href="/blog/tag/#java" title="Tag: java" rel="tag">java</a>&nbsp;
+            <a href="/blog/tag/#oo" title="Tag: oo" rel="tag">oo</a>
+            </span>
+        </li>
+        <li>
+            <time class="time">
+                2017-05-23 Tue.
+            </time>
+            <a class="title" href="/blog/2017/05/23/notify-vs-notifyall-thread-sync-in-java/">Multi-thread
+                synchronization in Java, notify() vs notifyAll()</a>
+            <span class="categories">
+            <i class="fa fa-th-list"></i>
+            <a href="/blog/category/#IT" title="Category: IT" rel="category">IT</a>&nbsp;
+            <a href="/blog/category/#Java" title="Category: Java" rel="category">Java</a>
+            </span>
+            <span class="pageTag">
+            <i class="fa fa-tags"></i>
+            <a href="/blog/tag/#java" title="Tag: java" rel="tag">java</a>&nbsp;
+            <a href="/blog/tag/#multi-thread" title="Tag: multi-thread" rel="tag">multi-thread</a>&nbsp;
+            <a href="/blog/tag/#concurrency" title="Tag: concurrency" rel="tag">concurrency</a>&nbsp;
+            <a href="/blog/tag/#synchronization" title="Tag: synchronization" rel="tag">synchronization</a>
+            </span>
+        </li>
+        <li>
+            <time class="time">
+                2017-05-22 Mon.
+            </time>
+            <a class="title" href="/blog/2017/05/22/singleton-pattern-lazy-initialization-impl-in-java/">Singleton
+                pattern lazy initialization implementation in Java</a>
+            <span class="categories">
+            <i class="fa fa-th-list"></i>
+            <a href="/blog/category/#IT" title="Category: IT" rel="category">IT</a>&nbsp;
+            <a href="/blog/category/#Java" title="Category: Java" rel="category">Java</a>
+            </span>
+            <span class="pageTag">
+            <i class="fa fa-tags"></i>
+            <a href="/blog/tag/#java" title="Tag: java" rel="tag">java</a>&nbsp;
+            <a href="/blog/tag/#ooad" title="Tag: ooad" rel="tag">ooad</a>&nbsp;
+            <a href="/blog/tag/#design" title="Tag: design" rel="tag">design</a>&nbsp;
+            <a href="/blog/tag/#pattern" title="Tag: pattern" rel="tag">pattern</a>&nbsp;
+            <a href="/blog/tag/#concurrency" title="Tag: concurrency" rel="tag">concurrency</a>&nbsp;
+            <a href="/blog/tag/#multi-thread" title="Tag: multi-thread" rel="tag">multi-thread</a>
+            </span>
+        </li>
+        <li>
+            <time class="time">
+                2017-05-21 Sun.
+            </time>
+            <a class="title" href="/blog/2017/05/21/object-oriented-concepts-and-principle-in-java/">Object-Oriented
+                Concepts and Design Principles</a>
+            <span class="categories">
+            <i class="fa fa-th-list"></i>
+            <a href="/blog/category/#IT" title="Category: IT" rel="category">IT</a>&nbsp;
+            <a href="/blog/category/#Java" title="Category: Java" rel="category">Java</a>
+            </span>
+            <span class="pageTag">
+            <i class="fa fa-tags"></i>
+            <a href="/blog/tag/#java" title="Tag: java" rel="tag">java</a>&nbsp;
+            <a href="/blog/tag/#design" title="Tag: design" rel="tag">design</a>&nbsp;
+            <a href="/blog/tag/#oo" title="Tag: oo" rel="tag">oo</a>&nbsp;
+            <a href="/blog/tag/#oop" title="Tag: oop" rel="tag">oop</a>&nbsp;
+            <a href="/blog/tag/#ooa" title="Tag: ooa" rel="tag">ooa</a>&nbsp;
+            <a href="/blog/tag/#ooad" title="Tag: ooad" rel="tag">ooad</a>
+            </span>
+        </li>
+        <li>
+            <time class="time">
+                2017-05-17 Wed.
+            </time>
+            <a class="title" href="/blog/2017/05/17/softskill-ten-steps-learning-approach/">Abstract - John Sonmez's
+                10-steps system for self-learning</a>
+            <span class="categories">
+            <i class="fa fa-th-list"></i>
+            <a href="/blog/category/#IT" title="Category: IT" rel="category">IT</a>&nbsp;
+            <a href="/blog/category/#SoftSkill" title="Category: SoftSkill" rel="category">SoftSkill</a>
+            </span>
+            <span class="pageTag">
+            <i class="fa fa-tags"></i>
+            <a href="/blog/tag/#softskill" title="Tag: softskill" rel="tag">softskill</a>&nbsp;
+            <a href="/blog/tag/#learning" title="Tag: learning" rel="tag">learning</a>
+            </span>
+        </li>
+        <li>
+            <time class="time">
+                2017-05-17 Wed.
+            </time>
+            <a class="title" href="/blog/2017/05/17/softskill-ten-steps-learning-approach-CH/">读书笔记 - John
+                Sonmez的十步学习法</a>
+            <span class="categories">
+            <i class="fa fa-th-list"></i>
+            <a href="/blog/category/#IT" title="Category: IT" rel="category">IT</a>&nbsp;
+            <a href="/blog/category/#SoftSkill" title="Category: SoftSkill" rel="category">SoftSkill</a>
+            </span>
+            <span class="pageTag">
+            <i class="fa fa-tags"></i>
+            <a href="/blog/tag/#softskill" title="Tag: softskill" rel="tag">softskill</a>&nbsp;
+            <a href="/blog/tag/#learning" title="Tag: learning" rel="tag">learning</a>
+            </span>
+        </li>
+        <li>
+            <time class="time">
+                2017-05-16 Tue.
+            </time>
+            <a class="title" href="/blog/2017/05/16/java-generic-type-and-polymorphism/">Understanding polymorphism and
+                generics, generics wildcards</a>
+            <span class="pageTag">
+            <i class="fa fa-tags"></i>
+            <a href="/blog/tag/#java" title="Tag: java" rel="tag">java</a>&nbsp;
+            <a href="/blog/tag/#ocp" title="Tag: ocp" rel="tag">ocp</a>&nbsp;
+            <a href="/blog/tag/#polymorphism" title="Tag: polymorphism" rel="tag">polymorphism</a>&nbsp;
+            <a href="/blog/tag/#generics" title="Tag: generics" rel="tag">generics</a>
+            </span>
+            <span class="categories">
+            <i class="fa fa-th-list"></i>
+            <a href="/blog/category/#IT" title="Category: IT" rel="category">IT</a>&nbsp;
+            <a href="/blog/category/#Java" title="Category: Java" rel="category">Java</a>
+            </span>
+        </li>
+        <li>
+            <time class="time">
+                2017-05-15 Mon.
+            </time>
+            <a class="title" href="/blog/2017/05/15/java-hashcode-and-equals-method-contract/">Understand the hashCode()
+                and equals() contract</a>
+            <span class="categories">
+            <i class="fa fa-th-list"></i>
+            <a href="/blog/category/#IT" title="Category: IT" rel="category">IT</a>&nbsp;
+            <a href="/blog/category/#Java" title="Category: Java" rel="category">Java</a>
+            </span>
+            <span class="pageTag">
+            <i class="fa fa-tags"></i>
+            <a href="/blog/tag/#java" title="Tag: java" rel="tag">java</a>&nbsp;
+            <a href="/blog/tag/#ocp" title="Tag: ocp" rel="tag">ocp</a>
+            </span>
+        </li>
+        <li>
+            <time class="time">
+                2017-05-14 Sun.
+            </time>
+            <a class="title" href="/blog/2017/05/14/java-equals-method/">equals() method v.s. == in Java</a>
+            <span class="categories">
+            <i class="fa fa-th-list"></i>
+            <a href="/blog/category/#Java" title="Category: Java" rel="category">Java</a>&nbsp;
+            <a href="/blog/category/#IT" title="Category: IT" rel="category">IT</a>
+            </span>
+            <span class="pageTag">
+            <i class="fa fa-tags"></i>
+            <a href="/blog/tag/#java" title="Tag: java" rel="tag">java</a>&nbsp;
+            <a href="/blog/tag/#ocp" title="Tag: ocp" rel="tag">ocp</a>
+            </span>
+        </li>
+        <li>
+            <time class="time">
+                2017-05-13 Sat.
+            </time>
+            <a class="title" href="/blog/2017/05/13/java-modifier-default-vs-protected/">Difference between 'protected'
+                and 'default' Java access modifiers</a>
+            <span class="categories">
+            <i class="fa fa-th-list"></i>
+            <a href="/blog/category/#Java" title="Category: Java" rel="category">Java</a>&nbsp;
+            <a href="/blog/category/#IT" title="Category: IT" rel="category">IT</a>
+            </span>
+            <span class="pageTag">
+            <i class="fa fa-tags"></i>
+            <a href="/blog/tag/#java" title="Tag: java" rel="tag">java</a>&nbsp;
+            <a href="/blog/tag/#ocp" title="Tag: ocp" rel="tag">ocp</a>
+            </span>
+        </li>
+        <li>
+            <time class="time">
+                2017-05-07 Sun.
+            </time>
+            <a class="title" href="/blog/2017/05/07/using-markdown-for-web-writing/">Using MARKDOWN format for WEB
+                writing</a>
+            <span class="categories">
+            <i class="fa fa-th-list"></i>
+            <a href="/blog/category/#Network" title="Category: Network" rel="category">Network</a>&nbsp;
+            <a href="/blog/category/#IT" title="Category: IT" rel="category">IT</a>
+            </span>
+            <span class="pageTag">
+            <i class="fa fa-tags"></i>
+            <a href="/blog/tag/#markdown" title="Tag: markdown" rel="tag">markdown</a>
+            </span>
+        </li>
+        <li>
+            <time class="time">
+                2017-05-06 Sat.
+            </time>
+            <a class="title" href="/blog/2017/05/06/it-practitioners-are-night-owls/">更多的IT人适合在夜间工作</a>
+            <span class="categories">
+            <i class="fa fa-th-list"></i>
+            <a href="/blog/category/#IT" title="Category: IT" rel="category">IT</a>
+            </span>
+            <span class="pageTag">
+            <i class="fa fa-tags"></i>
+            <a href="/blog/tag/#work" title="Tag: work" rel="tag">work</a>&nbsp;
+            <a href="/blog/tag/#life" title="Tag: life" rel="tag">life</a>
+            </span>
+        </li>
+        <li>
+            <time class="time">
+                2017-05-05 Fri.
+            </time>
+            <a class="title" href="/blog/2017/05/05/Interesting-emoji-characters/">Interesting emoji characters</a>
+            <span class="categories">
+            <i class="fa fa-th-list"></i>
+            <a href="/blog/category/#IT" title="Category: IT" rel="category">IT</a>
+            </span>
+            <span class="pageTag">
+            <i class="fa fa-tags"></i>
+            <a href="/blog/tag/#emoji" title="Tag: emoji" rel="tag">emoji</a>
+            </span>
+        </li>
+        <li>
+            <time class="time">
+                2017-05-02 Tue.
+            </time>
+            <a class="title" href="/blog/2017/05/02/welcome-to-jekyll/">Welcome to Jekyll!</a>
+            <span class="categories">
+            <i class="fa fa-th-list"></i>
+            <a href="/blog/category/#Jekyll" title="Category: Jekyll" rel="category">Jekyll</a>&nbsp;
+            <a href="/blog/category/#Upgrade" title="Category: Upgrade" rel="category">Upgrade</a>
+            </span>
+            <span class="pageTag">
+            <i class="fa fa-tags"></i>
+            <a href="/blog/tag/#Jekyll" title="Tag: Jekyll" rel="tag">Jekyll</a>&nbsp;
+            <a href="/blog/tag/#blog" title="Tag: blog" rel="tag">blog</a>
+            </span>
+        </li>
+        <li>
+            <time class="time">
+                2017-04-20 Thu.
+            </time>
+            <a class="title" href="/blog/2017/04/20/endora-has-an-elf-ear/">Why Endora has an Elf's ear?</a>
+            <span class="categories">
+            <i class="fa fa-th-list"></i>
+            <a href="/blog/category/#Baby" title="Category: Baby" rel="category">Baby</a>
+            </span>
+            <span class="pageTag">
+            <i class="fa fa-tags"></i>
+            <a href="/blog/tag/#Endora" title="Tag: Endora" rel="tag">Endora</a>
+            </span>
+        </li>
+        <li>
+            <time class="time">
+                2017-04-18 Tue.
+            </time>
+            <a class="title" href="/blog/2017/04/18/frequently-used-git-commands/">Frequently used Git commands,
+                important Git concepts</a>
+            <span class="categories">
+            <i class="fa fa-th-list"></i>
+            <a href="/blog/category/#SCM" title="Category: SCM" rel="category">SCM</a>&nbsp;
+            <a href="/blog/category/#IT" title="Category: IT" rel="category">IT</a>
+            </span>
+            <span class="pageTag">
+            <i class="fa fa-tags"></i>
+            <a href="/blog/tag/#scm" title="Tag: scm" rel="tag">scm</a>&nbsp;
+            <a href="/blog/tag/#git" title="Tag: git" rel="tag">git</a>
+            </span>
+        </li>
+        <li>
+            <time class="time">
+                2017-04-01 Sat.
+            </time>
+            <a class="title" href="/blog/2017/04/01/why-w3schools-has-been-blocked-by-gwf/">www.w3schools.com has been
+                blocked!!</a>
+            <span class="categories">
+            <i class="fa fa-th-list"></i>
+            <a href="/blog/category/#Network" title="Category: Network" rel="category">Network</a>&nbsp;
+            <a href="/blog/category/#IT" title="Category: IT" rel="category">IT</a>
+            </span>
+            <span class="pageTag">
+            <i class="fa fa-tags"></i>
+            <a href="/blog/tag/#W3C" title="Tag: W3C" rel="tag">W3C</a>&nbsp;
+            <a href="/blog/tag/#GFW" title="Tag: GFW" rel="tag">GFW</a>&nbsp;
+            <a href="/blog/tag/#study" title="Tag: study" rel="tag">study</a>
+            </span>
+        </li>
+        <li>
+            <time class="time">
+                2017-01-03 Tue.
+            </time>
+            <a class="title" href="/blog/2017/01/03/across-gfw-using-vps-shadowsocks-and-router/">Where there is a Wall,
+                there is a Way. VPS+SS+Router实现全家WIFI科学上网</a>
+            <span class="categories">
+            <i class="fa fa-th-list"></i>
+            <a href="/blog/category/#Network" title="Category: Network" rel="category">Network</a>&nbsp;
+            <a href="/blog/category/#IT" title="Category: IT" rel="category">IT</a>
+            </span>
+            <span class="pageTag">
+            <i class="fa fa-tags"></i>
+            <a href="/blog/tag/#VPS" title="Tag: VPS" rel="tag">VPS</a>&nbsp;
+            <a href="/blog/tag/#GFW" title="Tag: GFW" rel="tag">GFW</a>&nbsp;
+            <a href="/blog/tag/#router" title="Tag: router" rel="tag">router</a>&nbsp;
+            <a href="/blog/tag/#SS" title="Tag: SS" rel="tag">SS</a>&nbsp;
+            <a href="/blog/tag/#Shadowsocks" title="Tag: Shadowsocks" rel="tag">Shadowsocks</a>&nbsp;
+            <a href="/blog/tag/#VPN" title="Tag: VPN" rel="tag">VPN</a>
+            </span>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

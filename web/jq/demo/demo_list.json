@@ -1,5 +1,5 @@
 {
-	"prototype": [
+	"prototypes": [
 		{
 			"tech": "HTML5",
 			"list": [
@@ -273,7 +273,7 @@
 			]
 		}
 	],
-	"demo": [
+	"demos": [
 
 	]
 }

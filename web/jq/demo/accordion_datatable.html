@@ -1,21 +1,65 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" type="text/css"
+          href="https://cdn.datatables.net/v/dt/jq-3.2.1/jq-3.2.1/dt-1.10.16/datatables.min.css"/>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdn.datatables.net/v/dt/jq-3.2.1/jq-3.2.1/dt-1.10.16/datatables.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
         $(document).ready(function () {
-            $("button").click(function () {
-                console.log("button clicked.")
-                $.getJSON("demo_list.json", function (result) {
-                    console.log(result);
-                });
-            });
+                $.getJSON("//eastmanjian.cn/js_demo/jq/demo/demo_list.json", renderDemoList);
         });
+        function renderDemoList(result) {
+            console.log(result);
+            console.log(result.prototypes.length);
+
+            //add prototypes content
+            for (var i = 0; i < result.prototypes.length; i++) {
+                console.log(result.prototypes[i].tech);
+                var html = "<div><h3>" + result.prototypes[i].tech + "</h3><div><table id='tech" + i
+                    + "PrototypeList' class='display compact' cellspacing='0' width='100%'></table></div></div>";
+                $("#prototypes").append(html);
+            }
+
+            //render accordion
+            $("#prototypes").accordion({
+                header: "> div > h3",
+                heightStyle: "content",
+                collapsible: true
+            }).sortable({
+                axis: "y",
+                handle: "h3",
+                stop: function (event, ui) {
+                    // IE doesn't register the blur when sorting
+                    // so trigger focusout handlers to remove .ui-state-focus
+                    ui.item.children("h3").triggerHandler("focusout");
+
+                    // Refresh accordion to handle new order
+                    $(this).accordion("refresh");
+                }
+            });
+
+            //render datatables
+            for (var i = 0; i < result.prototypes.length; i++) {
+                $('#tech' + i + 'PrototypeList').DataTable({
+                    data: result.prototypes[i].list,
+                    columns: [
+                        {title: "Category"},
+                        {title: "Example"}
+                    ]
+                });
+            }
+
+        }
     </script>
 </head>
 <body>
-<h3>jQuery AJAX - $.getJSON() read a demo list json file</h3>
-<button>get JSON data</button>
-<p></p>
+<h3>jQuery UI Accordion, datatable plugin, jQuery AJAX read json data</h3>
+<section id="prototypes">
+
+</section>
 </body>
 </html>

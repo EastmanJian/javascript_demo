@@ -8,14 +8,15 @@
                 console.log("button clicked.")
                 $.getJSON("demo_list.json", function (result) {
                     console.log(result);
+                    $("#output").text(JSON.stringify(result));
                 });
             });
         });
     </script>
 </head>
 <body>
-<h3>jQuery AJAX - $.getJSON() read a demo list json file</h3>
+<h3>jQuery AJAX - $.getJSON() read a json file which contains demo list data</h3>
 <button>get JSON data</button>
-<p></p>
+<p id="output"></p>
 </body>
 </html>
