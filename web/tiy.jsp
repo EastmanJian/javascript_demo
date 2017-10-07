@@ -13,9 +13,16 @@ e.g. https://eastmanjian.cn/js_demo/tiy.jsp?sample=https%3A%2F%2Feastmanjian.git
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cmn-Hans-CN" lang="zh-cmn-Hans-CN">
 <head>
-    <title>Test It Yourself</title>
+    <title>Try It Yourself</title>
     <link rel="shortcut icon" href="/blog/favicon.ico?" type="image/x-icon">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script src="https://codemirror.net/lib/codemirror.js"></script>
+    <link rel="stylesheet" href="css/codemirror.css">
+    <script src="https://codemirror.net/mode/xml/xml.js"></script>
+    <script src="https://codemirror.net/mode/javascript/javascript.js"></script>
+    <script src="https://codemirror.net/mode/css/css.js"></script>
+    <script src="https://codemirror.net/mode/htmlmixed/htmlmixed.js"></script>
+    <script src="https://codemirror.net/addon/selection/active-line.js"></script>
     <link rel="stylesheet" type="text/css" href="./css/tiy.css">
     <script src="./js/tiy.js"></script>
 </head>
@@ -41,13 +48,15 @@ e.g. https://eastmanjian.cn/js_demo/tiy.jsp?sample=https%3A%2F%2Feastmanjian.git
     </form>
     <a class="ej_link" href="https://eastmanjian.cn">EJ</a>
     <div class="banner">
-        <p id="subject">Test It Yourself</p>
+        <p id="subject">Try It Yourself</p>
         <p id="description">HTML (CSS, Javascript) web page runner.</p>
     </div>
 </header>
 <div id="code_result">
-    <textarea id="testCode" wrap="logical">
-    </textarea>
+    <div id="codeWrapper">
+        <textarea id="testCode" wrap="logical">
+        </textarea>
+    </div>
     <iframe name="testResult" src="">
     </iframe>
 </div>

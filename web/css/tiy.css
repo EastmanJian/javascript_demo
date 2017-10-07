@@ -151,7 +151,7 @@ div#code_result {
     margin: 0;
 }
 
-#testCode {
+div#codeWrapper{
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -164,6 +164,11 @@ div#code_result {
     box-shadow: 3px 3px 3px gray;
 }
 
+textarea#testCode {
+    width: 100%;
+    height: 100%;
+}
+
 iframe {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -172,7 +177,7 @@ iframe {
     width: 49%;
     height: 100%;
     padding: 0;
-    margin: 0 5px 5px 3px;
+    margin: 0 5px 3px 3px;
     background-color: white;
     border: 1px solid gray;
     box-shadow: 3px 3px 3px gray;

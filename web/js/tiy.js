@@ -1,13 +1,27 @@
 /**
- * When page initiates, load the html in the get parameter on priority.
- * if there is no GET parameter, check if there is local storage.
- * If yes, load the testing script from local storage.
- * If no, call loadSample(), it loads the default sample.
+ * Global variables
+ */
+var tiyCodeMirror;
+
+/**
+ * When page initiates, do the following
+ *  1) initiate codemirror (syntax highlight code editor)
+ *  2) if there is a 'sample' GET parameter, load the html in the get parameter on priority.
+ *  3) if there is no GET parameter, check if there is local storage.
+ *      If yes, load the testing script from local storage.
+ *      If no, call loadSample(), it loads the default sample.
  */
 function loadWindow() {
+    //initiate codemirror
+    tiyCodeMirror = CodeMirror.fromTextArea(document.getElementById("testCode"), {
+        lineNumbers: true,
+        mode: "htmlmixed",
+        styleActiveLine: true
+    });
+
     var url = document.getElementById("sample").value;
     if (url == "null" && localStorage.codes) {
-        document.getElementById("testCode").value = localStorage.codes;
+        tiyCodeMirror.setValue(localStorage.codes);
         submitCodes();
     } else {
         loadSample();
@@ -16,7 +30,7 @@ function loadWindow() {
 
 
 /**
- * Load sample html codes to the textarea for edit and test
+ * Load sample html codes to the code editor and run it
  */
 function loadSample() {
     var url = document.getElementById("sample").value;
@@ -27,7 +41,7 @@ function loadSample() {
 
     xmlhttp.onload = function () {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            document.getElementById("testCode").value = xmlhttp.responseText;
+            tiyCodeMirror.setValue(xmlhttp.responseText);
             submitCodes();
         }
     }
@@ -41,7 +55,7 @@ function loadSample() {
  * Submit the codes from the editable area to the iframe to show the result
  */
 function submitCodes() {
-    var codes = document.getElementById("testCode").value;
+    var codes = tiyCodeMirror.getValue();
     //save the codes in local storage for loading next time
     localStorage.codes = codes;
 
