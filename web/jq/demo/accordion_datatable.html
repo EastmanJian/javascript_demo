@@ -9,6 +9,20 @@
             src="https://cdn.datatables.net/v/dt/jq-3.2.1/jq-3.2.1/dt-1.10.16/datatables.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
+        /**
+         * Escape HTML special characters, returns the escaped HTML string.
+         * @param string
+         * @returns {string}
+         */
+        function escapeHTML( string )
+        {
+            var pre = document.createElement('pre');
+            var text = document.createTextNode( string );
+            pre.appendChild(text);
+            return pre.innerHTML;
+        }
+
+
         $(document).ready(function () {
             //load json data
             console.log(location.origin);
@@ -63,10 +77,31 @@
                 }
             });
 
+            //construct table data arrays from the source json
+            var tableData = [];
+            var link;
+            for (var i = 0; i < result.prototypes.length; i++) {
+                tableData[i] = [];
+                for (var j = 0; j < result.prototypes[i].list.length; j++) {
+                    tableData[i][j] = [];
+                    tableData[i][j][0] = result.prototypes[i].list[j][0];
+                    link = result.prototypes[i].list[j][2];
+                    if (result.prototypes[i].list[j][3] == "TIY") {
+                        //using TIY function to show the prototype
+                        link = "https://eastmanjian.cn/js_demo/tiy.jsp?sample=" + encodeURIComponent(link);
+                        link = link.replace("sample=https%3A%2F%2Feastmanjian.cn%2Fjs_demo%2F", "sample=");
+                    }
+                    //construct the 'a' tag
+                    tableData[i][j][1] = '<A HREF="' + link + '">' + escapeHTML(result.prototypes[i].list[j][1]) + '</A>';
+                }
+            }
+            console.log(tableData);
+
+
             //render datatables for each prototype section
             for (var i = 0; i < result.prototypes.length; i++) {
                 $('#tech' + i + 'PrototypeList').DataTable({
-                    data: result.prototypes[i].list,
+                    data: tableData[i],
                     columns: [
                         {title: "Category",  "orderable": false},
                         {title: "Example"}
@@ -90,19 +125,19 @@
                 });
             }
 
+
             //construct the all prototype data array
-            var allPrototypeList = null;
+            var allPrototypeList = [];
             var tempList;
             for (var i = 0; i < result.prototypes.length; i++) {
-                tempList = result.prototypes[i].list;
-                for (var j = 0; j < tempList.length; j++) {
+                tempList = [];
+                for (var j = 0; j < tableData[i].length; j++) {
+                    tempList[j] = tableData[i][j].slice(); //clone the array
+                }
+                for (var j = 0; j < tempList.length; j++) { //add technology column as the 1st column
                     tempList[j].unshift(result.prototypes[i].tech);
                 }
-                if (allPrototypeList == null) {
-                    allPrototypeList = tempList;
-                } else {
-                    allPrototypeList = allPrototypeList.concat(tempList);
-                }
+                allPrototypeList = allPrototypeList.concat(tempList);
             }
 
             //render datatables for all-prototype section
@@ -143,7 +178,9 @@
                     });
                 }
             });
+
         }
+
     </script>
 </head>
 <body>

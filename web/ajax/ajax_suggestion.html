@@ -19,7 +19,7 @@
                     return;
                 }
             }
-            xmlHttp.onreadystatechange = function () {
+            xmlHttp.onload = function () {
                 if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
                     document.getElementById("txtHint").innerHTML = xmlHttp.responseText;
                 }
