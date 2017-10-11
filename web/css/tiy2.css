@@ -1,0 +1,184 @@
+body.main {
+    background: linear-gradient(to bottom, #bfbfbf, #e0e0e7, #bfbfbf);
+    height:100px;
+}
+
+header#ctrl {
+    position: absolute;
+    left: 2px;
+    top: 0px;
+    right: 2px;
+    height: 51px;
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+form#chooseSample {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    float: left;
+    left: 0;
+    top: 0;
+    width: 300px;
+    height: 45px;
+    border: 0;
+    padding: 0;
+    margin: 3px;
+    box-shadow: 3px 3px 3px gray;
+}
+
+form#chooseSample input[list] {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    width: 100%;
+    height: 50%;
+    margin: 0;
+}
+
+form#chooseSample input#loadOption{
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    width: 100%;
+    height: 50%;
+    margin: 0;
+    text-shadow: 1px 1px 1px gray;
+    cursor: pointer;
+}
+
+form#viewResult {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    float: left;
+    left: 0;
+    top: 0;
+    width: 350px;
+    height: 45px;
+    border: 0;
+    padding: 0;
+    margin: 4px;
+    box-shadow: 3px 3px 3px gray;
+}
+
+form#viewResult input {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    font-size: large;
+    font-weight: bolder;
+    cursor: pointer;
+    text-shadow: 2px 2px 2px gray;
+}
+
+a.ej_link {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    float: right;
+    width: 45px;
+    height: 45px;
+    background: darkblue;
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+    text-decoration: none;
+    text-align: center;
+    padding: 5px;
+    margin: 4px 15px 4px 4px;
+    transition-property: transform, background, color;
+    transition-duration: 1s, 1s, 1s, 1s;
+    border: 2px solid lightgray;
+    box-shadow: 3px 3px 3px gray;
+    border-radius: 12px 0 12px 0/12px 0 12px 0;
+}
+
+a.ej_link:hover {
+    transform: rotateY(360deg);
+    background: deepskyblue;
+    color: deeppink;
+}
+
+div.banner {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    float: right;
+    width: 300px;
+    height: 45px;
+    padding: 0;
+    margin: 4px;
+}
+
+p#subject {
+    width:300px;
+    height:30px;
+    margin: 0;
+    font-size: x-large;
+    text-align: center;
+    text-shadow: 3px 3px 3px white;
+    color: dimgray;
+    font-family:Broadway,courier;
+}
+
+p#description {
+    width:300px;
+    height:10px;
+    margin:0;
+    font-size: smaller;
+    text-align: center;
+    text-shadow: 2px 2px 1px white;
+    color: gray;
+    font-family:Arial,Verdana,Sans-serif;
+    line-height:80%;
+
+}
+
+div#code_result {
+    position: absolute;
+    left: 2px;
+    top: 55px;
+    bottom: 5px;
+    right: 2px;
+    min-height: 100px;
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+div#codeWrapper{
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    float: left;
+    width: 49%;
+    height: 100%;
+    padding: 0;
+    margin: 0 5px 5px 0;
+    resize: none;
+    box-shadow: 3px 3px 3px gray;
+}
+
+textarea#testCode {
+    width: 100%;
+    height: 100%;
+}
+
+iframe {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    float: left;
+    width: 49%;
+    height: 100%;
+    padding: 0;
+    margin: 0 5px 3px 3px;
+    background-color: white;
+    border: 1px solid gray;
+    box-shadow: 3px 3px 3px gray;
+}
