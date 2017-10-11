@@ -34,7 +34,7 @@ form#chooseSample input[list] {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     width: 100%;
-    height: 50%;
+    height: 23px;
     margin: 0;
 }
 
@@ -42,8 +42,21 @@ form#chooseSample input#loadOption{
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
-    width: 100%;
-    height: 50%;
+    display: inline;
+    width: 200px;
+    height: 22px;
+    margin: 0;
+    text-shadow: 1px 1px 1px gray;
+    cursor: pointer;
+}
+
+form#chooseSample input#deleteBtn{
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    display: inline;
+    width: 100px;
+    height: 22px;
     margin: 0;
     text-shadow: 1px 1px 1px gray;
     cursor: pointer;
@@ -56,11 +69,11 @@ form#viewResult {
     float: left;
     left: 0;
     top: 0;
-    width: 350px;
+    width: 60px;
     height: 45px;
     border: 0;
     padding: 0;
-    margin: 4px;
+    margin: 3px;
     box-shadow: 3px 3px 3px gray;
 }
 
@@ -70,11 +83,56 @@ form#viewResult input {
     -webkit-box-sizing: border-box;
     width: 100%;
     height: 100%;
-    font-size: large;
+    font-size: medium;
     font-weight: bolder;
     cursor: pointer;
     text-shadow: 2px 2px 2px gray;
 }
+
+
+div#saveSampleDiv {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    float: left;
+    left: 0;
+    top: 0;
+    width: 200px;
+    height: 45px;
+    border: 0;
+    padding: 0;
+    margin: 3px;
+    box-shadow: 3px 3px 3px gray;
+}
+
+div#saveSampleDiv input[name=fileName] {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    width: 100%;
+    height: 23px;
+    margin: 0;
+}
+
+div#saveSampleDiv input[name=fileName].saveOK {
+    background-color: lightgreen;
+}
+
+div#saveSampleDiv input[name=fileName].nameErr {
+    background-color: lightpink;
+}
+
+div#saveSampleDiv input[name=saveSampleBtn]{
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    width: 100%;
+    height: 22px;
+    margin: 0;
+    text-shadow: 1px 1px 1px gray;
+    cursor: pointer;
+}
+
 
 a.ej_link {
     box-sizing: border-box;

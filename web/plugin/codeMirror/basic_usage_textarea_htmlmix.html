@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Basic Usage of CodeMirror</title>
+    <script src="https://codemirror.net/lib/codemirror.js"></script>
+    <link rel="stylesheet" href="codemirror.css">
+    <script src="http://codemirror.net/mode/xml/xml.js"></script>
+    <script src="http://codemirror.net/mode/javascript/javascript.js"></script>
+    <script src="http://codemirror.net/mode/css/css.js"></script>
+    <script src="http://codemirror.net/mode/htmlmixed/htmlmixed.js"></script>
+    <style>
+        div#wrap {
+            width: 600px;
+            height: 400px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+<textarea id="code">
+
+</textarea>
+</div>
+<script>
+    var myCode = document.getElementById("code");
+    myCode.value = document.documentElement.innerHTML;
+    var myCodeMirror = CodeMirror.fromTextArea(myCode, {
+        lineNumbers: true,
+        mode: "htmlmixed"
+    });
+</script>
+</body>
+</html>
