@@ -7,7 +7,14 @@
     <script>
         function initListSearch() {
             var options = {
-                valueNames: ['time', 'title', 'categories', 'pageTag']
+                valueNames: ['time', 'title', 'categories', 'pageTag'],
+                fuzzySearch: {
+                    searchClass: "fuzzy-search",
+                    location: 0,
+                    distance: 9000,
+                    threshold: 0.1,
+                    multiSearch: true
+                }
             };
             var userList = new List('articles', options);
         }
@@ -18,7 +25,7 @@
 <div id="articles" class="left">
     <h1>Archives</h1>
     <hr>
-    <input class="search" placeholder="Search"/>
+    <input class="fuzzy-search" placeholder="Search"/>
     <ul class="list">
         <h2 id="y2017">2017</h2>
         <li>
