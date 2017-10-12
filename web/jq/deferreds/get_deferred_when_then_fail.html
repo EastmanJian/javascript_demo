@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo of jQuery deffered API, promise(), $.Deferred(), resolve() when(), then(), fail()</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<script>
+    function getLatestNews() {
+        return $.get("https://eastmanjian.cn/js_demo/jq/deferreds/ajax_when_then_ds1.txt", function (data) {
+            $("#status").append("<p>news data received</p>");
+            $(".news").html(data);
+        });
+    }
+
+    function getLatestReactions() {
+        return $.get("https://eastmanjian.cn/js_demo/jq/deferreds/ajax_when_then_ds3.jsp", function (data) {
+            $("#status").append("<p>reactions data received</p>");
+            $(".reactions").html(data);
+        });
+    }
+
+    function showAjaxedContent() {
+        // The .promise() is resolved once after all animations complete
+        return $(".news, .reactions").slideDown(500, function () {
+            // Called once for each element when animation completes
+            $(this).addClass("active").fadeOut("fast").fadeIn("slow");
+        }).promise();
+    }
+
+    function removeActiveClass() {
+        return $.Deferred(function (dfd) {
+            setTimeout(function () {
+                $(".news, .reactions").removeClass("active");
+                dfd.resolve();
+            }, 2000);
+        }).promise();
+    }
+
+    function loadData() {
+        $.when(
+            getLatestNews(),
+            getLatestReactions()
+        )
+            .then(showAjaxedContent)
+            .then(removeActiveClass)
+            .then(function () {
+                $("#status").append("<p>Requests succeeded and animations completed</p>");
+            })
+            .fail(function () {
+                $("#status").append("<p>something went wrong!</p>");
+            });
+    }
+</script>
+<style>
+    .active {
+        background-color: lightyellow;
+    }
+
+    p.news, p.reactions {
+        border-radius: 5px;
+        border: 1px solid gray;
+        padding: 0.3em;
+    }
+</style>
+<body>
+<h4>Click the button to send 2 ajax requests. When all requests are done, add CSS class and show the content with animation. Once the
+    animation completes, remove the CSS class and log the status.</h4>
+<button id="btn" onclick="loadData();">What's new?</button>
+<p class="news"></p>
+<p class="reactions"></p>
+<div id="status">Status:<br/></div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo of jQuery deffered, when(), then()</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<script>
+    function successFunc() {
+        $("#result").text("success!");
+    }
+
+    function failureFunc() {
+        $("#result").text("failure!")
+    }
+
+    function loadData() {
+        $.when(
+            $.ajax( "https://eastmanjian.cn/js_demo/jq/deferreds/ajax_when_then_ds1.txt" ),
+            $.ajax( "https://eastmanjian.cn/js_demo/jq/deferreds/ajax_when_then_ds2.json" ),
+            //uncomment the line below to test a failure case
+            //$.ajax( "https://eastmanjian.cn/js_demo/jq/deferreds/not_exists.jsp" ),
+            $.ajax( "https://eastmanjian.cn/js_demo/jq/deferreds/ajax_when_then_ds3.jsp" )
+        ).then( successFunc, failureFunc );
+    }
+</script>
+<body>
+<p>Click the button to sent 3 ajax requests. when all requests are resolved, show a result asynchronously</p>
+<button id="btn" onclick="loadData();">Load</button>
+<p>Result: <span id="result"></span></p>
+</body>
+</html>

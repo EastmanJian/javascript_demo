@@ -1,0 +1,30 @@
+{
+  "configs": [
+    {
+      "server": "jp06-50.ssv7.net",
+      "server_port": "20003",
+      "local_port": 1080,
+      "password": "ncAHyeMAhW5K",
+      "method": "aes-256-cfb"
+    },
+    {
+      "server": "sg01-50.ssv7.net",
+      "server_port": "20003",
+      "local_port": 1080,
+      "password": "ncAHyeMAhW5K",
+      "method": "aes-256-cfb"
+    },
+    {
+      "server": "us01-50.ssv7.net",
+      "server_port": "20003",
+      "local_port": 1080,
+      "password": "ncAHyeMAhW5K",
+      "method": "aes-256-cfb"
+    }
+  ],
+  "localPort": 1080,
+  "index": 0,
+  "global": false,
+  "enabled": true,
+  "isDefault": false
+}
