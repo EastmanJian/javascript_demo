@@ -1,0 +1,19 @@
+<html>
+<head>
+</head>
+<body>
+<h2>using string.slice()</h2>
+<p id="output"></p>
+<script>
+    //codes for test
+    var str = "../userfiles/bgcolors.html";
+    var res = str.slice(str.lastIndexOf("/") + 1, str.lastIndexOf("."));
+
+    //page output
+    var txt = "";
+    txt += res;
+
+    document.getElementById("output").innerHTML = txt;
+</script>
+</body>
+</html>

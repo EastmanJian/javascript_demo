@@ -9,7 +9,7 @@
     try {
         samplefiles.recycleFile(fileName);
     } catch (IOException e) {
-        respText = "{\"result\":\"" + e.getMessage() + "\"}";
+        respText = "{\"result\":\"" + e.getClass().getName() + ": " + e.getMessage() + "\"}";
     }
     out.print(respText);
 %>

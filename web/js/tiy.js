@@ -211,7 +211,7 @@ function loadCurrentOption() {
 
 /**
  * Post AJAX request wrapper function.
- * The response from server is excepted in JSON format
+ * The response from server is required in JSON format
  * @param url - the url to post
  * @param params - the params to post using encodedURI format
  * @param callback - callback function once there's a response from the request

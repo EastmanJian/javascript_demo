@@ -103,6 +103,5 @@ public class SampleFiles {
         Path target = FileSystems.getDefault().getPath(recyclePath, fileName);
         System.out.println("recycle file " + source + " to " + target);
         Files.move(source, target, REPLACE_EXISTING);
-
     }
 }
