@@ -128,7 +128,7 @@ function loadSample() {
 }
 
 
-function checkFileNameFormat(inputField) {
+function validateFileNameFormat(inputField) {
     if (inputField.checkValidity() || inputField.value == "") {
         inputField.className = "";
     } else {

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .democlass {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<h3 id="useCreate">Use createAttribute() and setAttributeNode() to change the class attribute of this header</h3>
+<h3 id="useSet">Use setAttribute() to change the class attribute of this header</h3>
+
+<p>Often, you will want to use the element.setAttribute() method instead of the createAttribute() method.</p>
+
+<button onclick="useCreateAttr()">Try createAttribute()</button>
+<button onclick="useSetAttr()">Try createAttribute()</button>
+
+<script>
+    function useCreateAttr() {
+        var h3 = document.getElementById("useCreate");
+        var att = document.createAttribute("class");
+        att.value = "democlass";
+        h3.setAttributeNode(att);
+    }
+
+    function useSetAttr() {
+        var h3 = document.getElementById("useSet");
+        h3.setAttribute("class", "democlass");
+    }
+</script>
+
+</body>
+</html>

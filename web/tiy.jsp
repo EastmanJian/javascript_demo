@@ -47,7 +47,7 @@ e.g. https://eastmanjian.cn/js_demo/tiy.jsp?sample=https%3A%2F%2Feastmanjian.git
     <div id="saveSampleDiv">
         <input type="hidden" id="codeForSave" name="code">
         <input type="text" id="fileNameInput" name="fileName" pattern="[a-zA-Z_0-9]{1,80}" title="File Name (*.html)"
-               required="required" onfocus="checkFileNameFormat(this);" onkeyup="checkFileNameFormat(this);"
+               required="required" onfocus="validateFileNameFormat(this);" onkeyup="validateFileNameFormat(this);"
                placeholder="Input a file name"/>
         <input type="button" id="saveBtn" name="saveSampleBtn" value="Save" onclick="saveSample();">
     </div>
