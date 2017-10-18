@@ -21,10 +21,11 @@ function loadWindow() {
     });
 
     //load sample from demo list
-    loadJSON("https://eastmanjian.cn/blog/json/demo_list.json", updateDemoSamples);
+    ajaxLoadJSON("https://eastmanjian.cn/blog/json/demo_list.json").then(updateDemoSamples, ajaxReqErr);
+
 
     //load user saved samples
-    loadJSON("tiy_get_user_samples.jsp", updateUserSamples);
+    ajaxLoadJSON("tiy_get_user_samples.jsp").then(updateUserSamples, ajaxReqErr);
 
     //load target html codes
     var url = document.getElementById("sample").value;
@@ -60,6 +61,14 @@ function updateDemoSamples(data) {
 }
 
 /**
+ * error handler for ajax request.
+ * @param reason - the err msg returned from the promise rejection.
+ */
+function ajaxReqErr(reason) {
+    console.log(reason);
+}
+
+/**
  * Callback function. Once the user saved sample list json data arrives, append them on the top of the option list dropdown box
  * @param data - the user saved sample filenames json data object
  */
@@ -77,23 +86,36 @@ function updateUserSamples(data) {
     }
 }
 
-/**
- * load json data with AJAX
- * @param url - the json url
- * @param callback - callback function after json is loaded, accept the json object as parameter
- */
-function loadJSON(url, callback) {
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onload = function () {
-        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            var resp = JSON.parse(xmlhttp.responseText);
-            callback(resp);
-        }
-    }
-    xmlhttp.open("GET", url, true);
-    xmlhttp.send();
-}
 
+/**
+ * wrapper function of loading json data with AJAX using promise
+ * @param url - the json url
+ * @returns {Promise}
+ */
+function ajaxLoadJSON(url) {
+    return new Promise(function (resolve, reject) {
+        var xhr = new XMLHttpRequest();
+        xhr.onload = () => {
+            if (xhr.status == 200) {
+                let resp;
+                try {
+                    resp = JSON.parse(xhr.responseText);
+                } catch (err) {
+                    reject("Parse response JSON Error: " + err);
+                }
+                resolve(resp);
+            } else {
+                reject("Server Error: " + xhr.status);
+            }
+        }
+        xhr.onerror = () => {
+            reject("Cannot Make AJAX Request");
+        }
+
+        xhr.open("GET", url, true);
+        xhr.send();
+    });
+}
 
 /**
  * Load sample html codes to the code editor using AJAX, and run it.
@@ -106,18 +128,18 @@ function loadSample() {
     }
     var xmlhttp = new XMLHttpRequest();
 
-    xmlhttp.onload = function () {
+    xmlhttp.onload = () => {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             tiyCodeMirror.setValue(xmlhttp.responseText);
             submitCodes();
         }
     }
 
-    xmlhttp.onerror = function () {
+    xmlhttp.onerror = () => {
         alert(xmlhttp.readyState + " - " + xmlhttp.errorMessage + " - " + xmlhttp.statusText);
     }
 
-    xmlhttp.onloadend = function () {
+    xmlhttp.onloadend = () => {
         if (xmlhttp.status == 404)
             alert("Sample not found!");
     }
@@ -127,7 +149,10 @@ function loadSample() {
 
 }
 
-
+/**
+ * file name format validator
+ * @param inputField - the file name input field.
+ */
 function validateFileNameFormat(inputField) {
     if (inputField.checkValidity() || inputField.value == "") {
         inputField.className = "";
@@ -156,25 +181,25 @@ function saveSample() {
     var fileName = fileNameField.value;
     var codes = tiyCodeMirror.getValue();
     var params = "fileName=" + encodeURIComponent(fileName) + "&" + "codes=" + encodeURIComponent(codes);
-    postXHR("tiy_save.jsp", params, saveSampleResult, fileName);
+    ajaxPostReq("tiy_save.jsp", params).then(saveSampleResult, ajaxReqErr);
 }
 
 /**
  * Callback function of save sample request.
  * @param resp - the server response data after save the sample
  */
-function saveSampleResult(resp, fileName) {
+function saveSampleResult(resp) {
     console.log("saveResult=" + resp.result);
     if (resp.result == "Success") {
         option = document.createElement("option");
-        option.setAttribute("label", "User Sample - " + fileName + ".html");
-        option.setAttribute("value", "../userfiles/" + fileName + ".html");
+        option.setAttribute("label", "User Sample - " + resp.fileName + ".html");
+        option.setAttribute("value", "../userfiles/" + resp.fileName + ".html");
         document.getElementById("url_list").appendChild(option);
         document.getElementById("fileNameInput").className = "saveOK";
-        document.getElementById("saveBtn").disabled = false;
     } else {
         alert(resp.result);
     }
+    document.getElementById("saveBtn").disabled = false;
 }
 
 /**
@@ -208,28 +233,36 @@ function loadCurrentOption() {
     }
 }
 
-
 /**
- * Post AJAX request wrapper function.
+ * Wrapper function of posting AJAX request using promise.
  * The response from server is required in JSON format
  * @param url - the url to post
  * @param params - the params to post using encodedURI format
- * @param callback - callback function once there's a response from the request
- * @param callbackParam - additional callback parameters to pass
+ * @returns {Promise}
  */
-function postXHR(url, params, callback, callbackParam) {
-    var xhr = new XMLHttpRequest();
-    xhr.onload = function () {
-        if (xhr.status == 200) {
-            var resp = JSON.parse(xhr.responseText);
-            callback(resp, callbackParam);
-        } else {
-            callback({"result": xhr.status}, callbackParam);
+function ajaxPostReq(url, params) {
+    return new Promise(function (resolve, reject) {
+        var xhr = new XMLHttpRequest();
+        xhr.onload = () => {
+            if (xhr.status == 200) {
+                let resp;
+                try {
+                    resp = JSON.parse(xhr.responseText);
+                } catch (err) {
+                    reject("Parse response JSON Error: " + err);
+                }
+                resolve(resp);
+            } else {
+                reject("Server Error: " + xhr.status);
+            }
         }
-    }
-    xhr.open("POST", url, true);
-    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded;charset=UTF-8");
-    xhr.send(params);
+        xhr.onerror = () => {
+            reject("Cannot Make AJAX Request");
+        }
+        xhr.open("POST", url, true);
+        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded;charset=UTF-8");
+        xhr.send(params);
+    });
 }
 
 
@@ -238,7 +271,7 @@ function postXHR(url, params, callback, callbackParam) {
  * User can only delete the user saved sample only.
  */
 function deleteCurrentOption() {
-    var currentOption = document.getElementById("urlOptions");
+    let currentOption = document.getElementById("urlOptions");
     if (currentOption.checkValidity() == false) {
         currentOption.focus();
         return false;
@@ -262,24 +295,25 @@ function deleteCurrentOption() {
 
     var params = "fileName=" + encodeURIComponent(fileToRecycle);
     console.log("delete user sample: " + fileToRecycle);
-    postXHR("tiy_recycle.jsp", params, deleteSampleResult, currentOption)
+    ajaxPostReq("tiy_recycle.jsp", params).then(deleteSampleResult, ajaxReqErr);
 }
 
 /**
  * Callback function of delete sample request.
  * @param resp - the server response data after delete the sample
  */
-function deleteSampleResult(resp, currentOption) {
+function deleteSampleResult(resp) {
+    let currentOption = document.getElementById("urlOptions");
     console.log("deleteResult=" + resp.result);
     if (resp.result != "Success") {
-        alert(resp.result);
+        alert(resp.result + "\nFileName: " + resp.fileName);
+        return false;
     }
     //remove currentOption from the dropdown
     document.querySelector("option[value='" + currentOption.value + "']").remove();
     currentOption.value = "";
     document.getElementById("deleteBtn").disabled = false;
 }
-
 
 
 window.addEventListener("load", loadWindow, true);

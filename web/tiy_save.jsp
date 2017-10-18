@@ -7,11 +7,11 @@
     System.out.println("fileName = " + fileName);
 
     SampleFiles samplefiles = new SampleFiles("/srv/www/htdocs/userfiles");
-    String respText = "{\"result\":\"Success\"}";
+    String respText = "{\"result\":\"Success\", \"fileName\":\"" + fileName + "\"}";
     try {
         samplefiles.saveSample(fileName, codes);
     } catch (IOException e) {
-        respText = "{\"result\":\"" + e.getMessage() + "\"}";
+        respText = "{\"result\":\"" + e.getMessage() + "\", \"fileName\":\"" + fileName + "\"}";
     }
     out.print(respText);
 %>
