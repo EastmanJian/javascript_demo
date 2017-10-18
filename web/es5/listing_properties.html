@@ -1,0 +1,25 @@
+<html>
+<head>
+</head>
+<body>
+<h2>Listing properties</h2>
+<p>getOwnPropertyNames(), keys()</p>
+<p id="output"></p>
+<script>
+    var txt="";
+
+    var obj ={}
+    obj = Object.create(Object.getPrototypeOf(obj), {
+        foo: { value: 123, enumerable: true },
+        bar: { value: 'abc', enumerable: true },
+        por: { value: 'zzz', enumerable: false },
+    });
+
+    txt += "getOwnPropertyNames() = " + Object.getOwnPropertyNames(obj) + "<br/>";
+    txt += "keys() = " + JSON.stringify(Object.keys(obj)) + "<br/>";
+    txt += "Array.isArray(keys()) = " + Array.isArray(Object.keys(obj)) + "<br/>";
+
+    document.getElementById("output").innerHTML = txt;
+</script>
+</body>
+</html>

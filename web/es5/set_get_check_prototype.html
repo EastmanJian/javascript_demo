@@ -1,0 +1,41 @@
+<html>
+<head>
+</head>
+<body>
+<h2>create(prototype, propertyDescriptor), getPrototypeOf(), isPrototypeOf()</h2>
+<p id="output"></p>
+<script>
+    //define a prototype
+    var PersonProto = {
+        describe: function () {
+            return 'Person named ' + this.name;
+        }
+    };
+
+    //use the prototype as an object
+    var txt = PersonProto.describe() + "<br/>";
+
+    //create an object with prototype and property descriptor
+    var violet = Object.create(PersonProto, {
+        name: {value: 'Violet', writable: true}  //property descriptor
+    });
+
+    //create an object with prototype. Just manually add a property because descriptors are verbose.
+    var endora = Object.create(PersonProto);
+    endora.name = "Endora";
+
+    txt += violet.describe() + "<br/>";
+    txt += endora.describe() + "<br/>";
+
+    //Object.getPrototypeOf()
+    txt += "(Object.getPrototypeOf(endora) ===  PersonProto) is " + (Object.getPrototypeOf(endora) === PersonProto) + "<br/>";
+
+    //Object.prototype.isPrototypeOf(obj)
+
+    txt += "PersonProto.isPrototypeOf(violet) = " + PersonProto.isPrototypeOf(violet) + "<br/>";
+    txt += "Object.getPrototypeOf(endora).isPrototypeOf(violet) = " + Object.getPrototypeOf(endora).isPrototypeOf(violet) + "<br/>";
+
+    document.getElementById("output").innerHTML = txt;
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<html>
+<head>
+</head>
+<body>
+<h2>ES5 New Array methods</h2>
+<p>isArray(), every(), filter(), forEach(), indexOf(), lastIndexOf(), map(), reduce(), some()</p>
+<p id="output"></p>
+<script>
+    var txt = ""
+    txt += "Array.isArray([1, 3, 5]) = " + Array.isArray([1, 3, 5]) + "<br/>";
+
+    function isEven(x) { return x % 2 === 0 }
+    txt += "[ 2, 4, 6 ].every(isEven) = " + [ 2, 4, 6 ].every(isEven) + "<br/>";
+
+    txt += "[ 1, 0, 3, 0 ].filter(function (x) { return x !== 0 }) = [" + [ 1, 0, 3, 0 ].filter(function (x) { return x !== 0 }) + "]<br/>";
+
+    var arr = [ 'apple', 'pear', 'orange' ];
+    arr.forEach(function (elem) {
+        txt += "---" + elem + "---";
+    });
+    txt += "<br/>";
+
+    txt += "[ 3, 1, 17, 1, 4 ].indexOf(1) is " + [ 3, 1, 17, 1, 4 ].indexOf(1) + "<br/>";
+    txt += "[ 3, 1, 17, 1, 4 ].indexOf(1, 2) is " + [ 3, 1, 17, 1, 4 ].indexOf(1, 2) + "<br/>";
+
+    txt += "[ 3, 1, 17, 1, 4 ].lastIndexOf(1) is " + [ 3, 1, 17, 1, 4 ].lastIndexOf(1) + "<br/>";
+    txt += "[ 3, 1, 17, 1, 4 ].lastIndexOf(1, -3) is " + [ 3, 1, 17, 1, 4 ].lastIndexOf(1, -3) + "<br/>";
+
+    txt += "[ 1, 2, 3 ].map(function (x) { return 2 * x }) = " + JSON.stringify([ 1, 2, 3 ].map(function (x) { return 2 * x })) + "<br/>";
+
+    function add(prev, cur) {
+        return prev + cur;
+    }
+    txt += "[10, 3, -1].reduce(add) = " + [10, 3, -1].reduce(add) + "<br/>";
+
+
+    function isEven(x) { return x % 2 === 0 }
+    txt += "[ 1, 3, 5 ].some(isEven) = " + [ 1, 3, 5 ].some(isEven) + "<br/>";
+    txt += "[ 1, 2, 3 ].some(isEven) = " + [ 1, 2, 3 ].some(isEven) + "<br/>";
+
+    document.getElementById("output").innerHTML = txt;
+</script>
+</body>
+</html>

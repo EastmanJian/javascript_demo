@@ -1,0 +1,39 @@
+<html>
+<head>
+</head>
+<body>
+<h2>Property Descriptors</h2>
+<p>defineProperty(), defineProperties(), create(), getOwnPropertyDescriptor()</p>
+<p id="output"></p>
+<script>
+    var txt="";
+
+    //If a property does not exist, create a new property using defineProperty()
+    var obj = {};
+    Object.defineProperty(obj, 'foo', { configurable: true });
+    txt += "obj.foo attributes=" + JSON.stringify(Object.getOwnPropertyDescriptor(obj, 'foo')) + "<br/>";
+
+    //If a property already exists, defineProperty() update the attributes
+    Object.defineProperty(obj, 'foo', { writable: true });
+    txt += "obj.foo attributes=" + JSON.stringify(Object.getOwnPropertyDescriptor(obj, 'foo')) + "<br/>";
+
+    //defineProperties()
+    var obj1 ={}
+    obj1 = Object.defineProperties(obj1, {
+        foo: { value: 123, enumerable: true },
+        bar: { value: 'abc', enumerable: true },
+        por: { value: 'zzz', enumerable: false },
+    });
+    txt += "obj1 =" + JSON.stringify(obj1) + "<br/>";
+
+    //create()
+    var obj2 = Object.create(Object.prototype, {
+        foo: { value: 456, enumerable: true },
+        bar: { value: 'def', enumerable: true }
+    });
+    txt += "obj2 =" + JSON.stringify(obj2) + "<br/>";
+
+    document.getElementById("output").innerHTML = txt;
+</script>
+</body>
+</html>

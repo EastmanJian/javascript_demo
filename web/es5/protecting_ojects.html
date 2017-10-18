@@ -1,0 +1,54 @@
+<html>
+<head>
+</head>
+<body>
+<h2>Protecting Objects</h2>
+<p>preventExtensions(), seal(), freeze()</p>
+<p id="output"></p>
+<script>
+    var txt="";
+
+    //prevent adding properties to obj
+    var obj = { foo: 'a' };
+    Object.preventExtensions(obj);
+    obj.bar = 'b'; //this will throw err in strict mode
+    txt += "obj.bar = " + obj.bar + "<br/>";
+    txt += "Object.isExtensible(obj) = " + Object.isExtensible(obj) + "<br/><br/>";
+
+    //prevents extensions and makes all properties 'unconfigurable'.
+    var obj1 = { foo: 'a1' };
+    txt += "obj1.foo before seal:" + JSON.stringify(Object.getOwnPropertyDescriptor(obj1, 'foo')) + "<BR/>";
+    Object.seal(obj1);
+    txt += "Object.isSealed(obj1)=" + Object.isSealed(obj1) + "<BR/>";
+    txt += "Object.isExtensible(obj1) = " + Object.isExtensible(obj1) + "<br/>";
+    txt += "obj1.foo after seal:" + JSON.stringify(Object.getOwnPropertyDescriptor(obj1, 'foo')) + "<BR/><BR/>";
+    //Object.defineProperty(obj, 'foo', { enumerable: false }); //cannot change the property attribute because it's sealed.
+
+    //makes all properties nonwritable and seals the object
+    var point = { x: 17, y: -5 };
+    Object.freeze(point);
+    point.x = 2;  // no effect, point.x is read-only
+    txt += "point.x = " + point.x + "<BR/>";
+    point.z = 123;  // no effect, point is not extensible
+    txt += "point.z = " + point.z + "<BR/>";
+    txt += "point = " + JSON.stringify(point) + "<BR/>";
+    txt += "Object.isFrozen(point) = " + Object.isFrozen(point) + "<BR/>";
+    txt += "Object.isSealed(point)=" + Object.isSealed(point) + "<BR/><BR/>";
+
+    //Protecting an object is shallow, it affects the own properties, but not the values of those properties.
+    var obj2 = {
+        foo: 1,
+        bar: ['a', 'b']
+    };
+    txt += "obj2 (before) = " + JSON.stringify(obj2) + "<BR/>";
+    Object.freeze(obj2);
+    obj2.foo = 2; // no effect
+    obj2.bar.push('c'); // changes obj.bar
+    txt += "obj2 (after) = " + JSON.stringify(obj2) + "<BR/>";
+
+
+    document.getElementById("output").innerHTML = txt;
+
+</script>
+</body>
+</html>

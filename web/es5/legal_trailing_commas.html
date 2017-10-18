@@ -1,0 +1,21 @@
+<html>
+<head>
+</head>
+<body>
+<h2>ES5 new feature</h2>
+<p>Legal trailing commas</p>
+<p id="output"></p>
+<script>
+    //codes for test
+    var obj = {"employees":[
+        {"firstName":"John", "lastName":"Doe"},
+        {"firstName":"Anna", "lastName":"Smith"},
+        {"firstName":"Peter", "lastName":"Jones"}, //this comma is legal
+    ]}
+
+    //page output
+    var txt=JSON.stringify(obj);
+    document.getElementById("output").innerHTML = txt;
+</script>
+</body>
+</html>

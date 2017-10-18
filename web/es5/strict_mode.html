@@ -1,0 +1,17 @@
+<html>
+<head>
+</head>
+<body>
+<h2>Strict Mode</h2>
+<p>Using a variable (property or object) without declaring it, is not allowed</p>
+<p>See console log for the Error after strict mode is enabled</p>
+<script>
+    function testStrict(){
+        "use strict";
+        x = 3.14; // This causes an error.
+    }
+
+    testStrict();
+</script>
+</body>
+</html>

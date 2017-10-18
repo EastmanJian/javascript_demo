@@ -1,0 +1,29 @@
+<html>
+<head>
+    <script>
+        var obj = {
+            get foo() {
+                return "Banana";
+            },
+            set foo(value) {
+                console.log("You invoked foo's setter: " + value);
+            }
+        };
+
+        function testAccessors() {
+            obj.foo = "Apple";
+            document.getElementById("output").innerText = "I set 'Apple' as the value of obj.foo. "
+                + "\nBut when I read it, the value is '" + obj.foo + "'.";
+        }
+
+    </script>
+</head>
+<body>
+<h2>Accessors (Getters and Setters)</h2>
+<p>ECMAScript 5 lets you write methods whose invocations look like you are getting or setting a property. That means
+    that a property is virtual and not storage space. You could, for example, forbid setting a property and always
+    compute the value returned when reading it.</p>
+<button onclick="testAccessors();">Try obj's accessors</button>
+<p id="output"></p>
+</body>
+</html>

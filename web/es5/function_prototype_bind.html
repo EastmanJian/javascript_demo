@@ -1,0 +1,24 @@
+<html>
+<head>
+</head>
+<body>
+<h2>Function.prototype.bind(thisValue, arg1?, ..., argN?)</h2>
+<p>This method performs partial function application—meaning it creates a new function that calls the receiver of bind() in the following manner: the value of this is thisValue and the arguments start with arg1 until argN, followed by the arguments of the new function. In other words, the new function appends its arguments to arg1, ..., argN when it calls the original function.</p>
+<p id="output"></p>
+<script>
+    var bound = func.bind('abc', 1, "para2");
+    var txt = bound(3, "para4", "five");
+
+    function func() {
+        console.log('this: '+this);
+        console.log('arguments: '+Array.prototype.slice.call(arguments));
+        return "Calling the bound function, the 'this' value is changed to '" + this +
+            "'.<br/> The arguments are combined with the arguments in the bind() and bound function - " +
+            JSON.stringify(arguments);
+    }
+
+    document.getElementById("output").innerHTML = txt;
+
+</script>
+</body>
+</html>
