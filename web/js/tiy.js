@@ -39,7 +39,7 @@ function loadWindow() {
 
 /**
  * Callback function. Once the demo list json data arrives, append them into the option list dropdown box
- * @param data - the demolist json data object
+ * @param data - the demolist json data object. Passed by the promise resolve argument.
  */
 function updateDemoSamples(data) {
     var option;
@@ -186,7 +186,7 @@ function saveSample() {
 
 /**
  * Callback function of save sample request.
- * @param resp - the server response data after save the sample
+ * @param resp - the server response data after save the sample, returned by the promise resolve argument
  */
 function saveSampleResult(resp) {
     console.log("saveResult=" + resp.result);

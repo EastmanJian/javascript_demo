@@ -1,0 +1,31 @@
+<html>
+<head>
+</head>
+<body>
+<h2>ES6 - Promise.race() - race between Promises and see which one finishes first</h2>
+<p>Check console log for the JavaScript output</p>
+<p id="output"></p>
+<script>
+
+    var p1 = new Promise(function (resolve, reject) {
+        setTimeout(() => {
+            resolve("Fulfillment Value 1");
+        }, 1000);
+    });
+
+    var p2 = new Promise(function (resolve, reject) {
+        setTimeout(() => {
+            resolve("fulfillment Value 2");
+        }, 2000);
+    });
+
+    var arr = [p1, p2];
+    Promise.race(arr).then((value) => {
+        console.log(value); //Output "Fulfillment value 1"
+    }, (reason) => {
+        console.log(reason);
+    });
+
+</script>
+</body>
+</html>

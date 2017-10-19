@@ -1,0 +1,38 @@
+<html>
+<head>
+</head>
+<body>
+<h2>ES6 - Combine one or more promises into new promises, Promise.all()</h2>
+<p>Check console log for the JavaScript output</p>
+<p id="output"></p>
+<script>
+    let fetchPromised = (url, timeout) => {
+        return new Promise((resolve, reject) => {
+            fetchAsync(url, timeout, resolve, reject)
+        })
+    }
+
+    function fetchAsync(url, timeout, onData, onError) {
+        console.log("fetching " + url);
+        let fetchResult = true; //simulate the fetch status
+        if (fetchResult === true) {
+            onData(Math.floor(Math.random() * 11)); //simulate the returning data
+        } else {
+            onError("fetch data error");
+        }
+    }
+
+    Promise.all([
+        fetchPromised("http://backend/foo.txt", 500),
+        fetchPromised("http://backend/bar.txt", 500),
+        fetchPromised("http://backend/baz.txt", 500)
+    ]).then((data) => {
+        console.log("data = " + JSON.stringify(data));
+        let [foo, bar, baz] = data
+        console.log(`success: foo=${foo} bar=${bar} baz=${baz}`)
+    }, (err) => {
+        console.log(`error: ${err}`)
+    })
+</script>
+</body>
+</html>

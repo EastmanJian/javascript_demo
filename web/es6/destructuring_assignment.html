@@ -1,0 +1,26 @@
+<html>
+<head>
+</head>
+<body>
+<h2>ES6 - destructuring of Arrays or object into individual variables during assignment</h2>
+<p>See the output from console log</p>
+<p id="output"></p>
+<script>
+
+    var list = [1, 2, 3]
+    var [a, b, c] = list
+    console.log(a + ", " + b + ", " + c); // -> 1, 2, 3
+    var [e, , f] = list
+    console.log(e + ", " + f); // -> 1, 3
+    [b, a] = [a, b]
+    console.log(a + ", " + b); // -> 2, 1
+
+    function getASTNode() {
+        return {op: 4, lhs: {op: 5}, rhs: 6};
+    }
+    var {op: a, lhs: {op: b}, rhs: c} = getASTNode()
+    console.log(a + "," + b + "," + c); // -> 4,5,6
+
+</script>
+</body>
+</html>

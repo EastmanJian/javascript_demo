@@ -1,0 +1,31 @@
+<html>
+<head>
+</head>
+<body>
+<h2>ES6 - Iterator and iterable protocol & For-Of Operator</h2>
+<p>See the output from console log</p>
+<p id="output"></p>
+<script>
+
+    let fibonacci = {
+        [Symbol.iterator]() {
+            let pre = 0, cur = 1
+            return {
+                next () {
+                    [ pre, cur ] = [ cur, pre + cur ]
+                    return { done: false, value: cur }
+                }
+            }
+        }
+    }
+
+    for (let n of fibonacci) {
+        if (n > 1000)
+            break
+        console.log(n)
+    }
+
+
+</script>
+</body>
+</html>

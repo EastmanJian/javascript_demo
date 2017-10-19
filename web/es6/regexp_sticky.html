@@ -1,0 +1,27 @@
+<html>
+<head>
+</head>
+<body>
+<h2>ES6 - RegExp sticky matching, lastIndex</h2>
+<p>See the output from console log</p>
+<p id="output"></p>
+<script>
+    let input = "Foo 1 Foo 132 Foo 42";
+    let pattern = /Foo\s+(\d+)/y;
+    let found = pattern.exec(input);
+    console.log(JSON.stringify(found)); // -> ["Foo 1","1"]
+    console.log(pattern.lastIndex);    // -> 5
+    pattern.lastIndex += 1;
+    found = pattern.exec(input);    // -> ["Foo 132","132"]
+    console.log(JSON.stringify(found));  // -> 13
+    console.log(pattern.lastIndex);
+    pattern.lastIndex += 1;
+    found = pattern.exec(input);
+    console.log(JSON.stringify(found));  // -> ["Foo 42","42"]
+    console.log(pattern.lastIndex); // -> 20
+
+
+
+</script>
+</body>
+</html>

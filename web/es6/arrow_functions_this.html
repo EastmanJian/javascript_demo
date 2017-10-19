@@ -1,0 +1,36 @@
+<html>
+<head>
+</head>
+<body>
+<h2>ES6 arrow functions, this keyword</h2>
+<p></p>
+<p id="output"></p>
+<script>
+    var object = {
+        f1: function () {
+            console.log(this); // -> object
+            var f2 = function () {
+                console.log(this); // -> window
+            };
+            f2();
+            setTimeout(f2, 500);
+        }
+    };
+    object.f1();
+
+    var object1 = {
+        f1: () => {
+            console.log(this);  // -> window
+            var f2 = () => {
+                console.log(this); // -> window
+            };
+            f2();
+            setTimeout(f2, 1000);
+        }
+    };
+    object1.f1();
+
+    document.getElementById("output").innerHTML = "";
+</script>
+</body>
+</html>

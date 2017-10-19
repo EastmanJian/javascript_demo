@@ -1,0 +1,24 @@
+<html>
+<head>
+</head>
+<body>
+<h2>ES6 - Generator function</h2>
+<p>See the output from console log</p>
+<p id="output"></p>
+<script>
+
+    function* range (start, end, step) {
+        while (start < end) {
+            yield start
+            start += step
+        }
+    }
+
+    for (let i of range(0, 10, 2)) {
+        console.log(i) // -> 0, 2, 4, 6, 8
+    }
+
+
+</script>
+</body>
+</html>

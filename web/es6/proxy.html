@@ -1,0 +1,28 @@
+<html>
+<head>
+</head>
+<body>
+<h2>ES6 - a proxy with get() trap</h2>
+<p>See the output from console log</p>
+<p id="output"></p>
+<script>
+
+    let target = {
+        foo: "Welcome, foo"
+    }
+    let proxy = new Proxy(target, {
+        get (target, name) {
+            return name in target ? target[name] : `Hello, ${name}`
+        }
+    })
+    proxy.sex = "male"
+
+    console.log(proxy.foo) // -> Welcome, foo
+    console.log(proxy.world) // -> Hello, world
+    console.log(target.world) // -> undefined
+    console.log(target.sex) // -> male
+
+
+</script>
+</body>
+</html>
