@@ -61,6 +61,7 @@ public class SampleFiles {
         } else {
             throw new IOException("Duplicated file name!");
         }
+
         OutputStreamWriter out = new OutputStreamWriter(new FileOutputStream(sampleFile), StandardCharsets.UTF_8);
         out.write(codes);
         out.close();

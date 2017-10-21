@@ -10,6 +10,5 @@
      */
     String codeOrginal = code.replaceAll("eastmanEqualSign", "=").replaceAll("eastmanJsTag", "script");
     out.print(codeOrginal);
-    out.flush();
-    out.close();
+
 %>
