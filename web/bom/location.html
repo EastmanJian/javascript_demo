@@ -1,11 +1,14 @@
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cmn-Hans-CN" lang="zh-cmn-Hans-CN">
 <head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 </head>
 <body>
 <h2>window.location properties</h2>
 <p id="output"></p>
 <script>
-    var txt="";
+    var txt="window.location & it's properties:" + "<br/>";
+    txt += "location = " + location + "<br/>";
     txt += "location.href = " + location.href + "<br/>";
     txt += "location.host = " + location.host + "<br/>";
     txt += "location.hostname = " + location.hostname + "<br/>";
@@ -15,8 +18,9 @@
     txt += "location.origin = " + location.origin + "<br/>";
     txt += "location.port = " + location.port + "<br/>";
     txt += "location.search = " + location.search + "<br/>";
-
+    console.log(txt);
     document.getElementById("output").innerHTML = txt;
+
 </script>
 </body>
 </html>

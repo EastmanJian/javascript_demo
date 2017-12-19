@@ -93,7 +93,7 @@ function updateUserSamples(data) {
  * @returns {Promise}
  */
 function ajaxLoadJSON(url) {
-    return new Promise(function (resolve, reject) {
+    return new Promise((resolve, reject) => {
         var xhr = new XMLHttpRequest();
         xhr.onload = () => {
             if (xhr.status == 200) {
@@ -241,7 +241,7 @@ function loadCurrentOption() {
  * @returns {Promise}
  */
 function ajaxPostReq(url, params) {
-    return new Promise(function (resolve, reject) {
+    return new Promise((resolve, reject) => {
         var xhr = new XMLHttpRequest();
         xhr.onload = () => {
             if (xhr.status == 200) {

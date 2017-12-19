@@ -1,0 +1,28 @@
+<html>
+<head>
+</head>
+<body>
+<h2>ES6 - Object.assign()</h2>
+<p>See the output from console log</p>
+<p id="output"></p>
+<script>
+
+    var dest = { quux: 0 }
+    var src1 = { foo: 1, bar: 2 }
+    var src2 = { foo: 3, baz: 4 }
+    Object.assign(dest, src1, src2)
+    console.log(dest.quux) // -> 0
+    console.log(dest.foo)  // -> 3
+    console.log(dest.bar)  // -> 2
+    console.log(dest.baz)  // -> 4 
+
+    var player = {score: 1, name: 'Jeff'};
+    var newPlayer = Object.assign({}, player, {score: 2});
+    console.log(JSON.stringify(newPlayer)); // -> {"score":2,"name":"Jeff"}
+    // Now player is unchanged, but newPlayer is {score: 2, name: 'Jeff'}
+    // Or if you are using object spread syntax proposal, you can write:
+    // var newPlayer = {...player, score: 2};
+
+</script>
+</body>
+</html>
