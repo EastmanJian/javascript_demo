@@ -17,13 +17,21 @@ e.g. https://eastmanjian.cn/js_demo/tiy.jsp?sample=https%3A%2F%2Feastmanjian.git
     <title>Try It Yourself</title>
     <link rel="shortcut icon" href="/blog/favicon.ico?" type="image/x-icon">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <script src="https://codemirror.net/lib/codemirror.js"></script>
     <link rel="stylesheet" href="css/codemirror.css">
+    <script src="https://cdn.bootcss.com/codemirror/5.32.0/codemirror.js"></script>
+    <script src="https://cdn.bootcss.com/codemirror/5.32.0/mode/xml/xml.js"></script>
+    <script src="https://cdn.bootcss.com/codemirror/5.32.0/mode/javascript/javascript.js"></script>
+    <script src="https://cdn.bootcss.com/codemirror/5.32.0/mode/css/css.js"></script>
+    <script src="https://cdn.bootcss.com/codemirror/5.32.0/mode/htmlmixed/htmlmixed.js"></script>
+    <script src="https://cdn.bootcss.com/codemirror/5.32.0/addon/selection/active-line.js"></script>
+    <!-- codemirror.net seems slower than cdn.bootcss.com
+    <script src="https://codemirror.net/lib/codemirror.js"></script>
     <script src="https://codemirror.net/mode/xml/xml.js"></script>
     <script src="https://codemirror.net/mode/javascript/javascript.js"></script>
     <script src="https://codemirror.net/mode/css/css.js"></script>
     <script src="https://codemirror.net/mode/htmlmixed/htmlmixed.js"></script>
     <script src="https://codemirror.net/addon/selection/active-line.js"></script>
+    -->
     <link rel="stylesheet" type="text/css" href="./css/tiy.css">
     <script src="./js/tiy.js"></script>
 </head>
