@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Container Demo</title>
+    <style>
+        div {
+            width: 260px;
+            height: 240px;
+            background-color: lightskyblue;
+            border: 1px solid black;
+        }
+
+        p {
+            width: 140px;
+            height: 30px;
+            margin: 60px;
+            background-color: lightpink;
+            border: 1px solid black;
+        }
+
+        textarea {
+            width: 250px;
+            height: 500px;
+            float: right;
+        }
+    </style>
+    <script>
+        function log(msg) {
+            document.getElementById("output").value += msg + "\n";
+        }
+
+
+        function bubbDivMsg(e) {
+            log("container clicked");
+            log(e.toElement.id + " clicked");
+            console.log(e);
+        }
+    </script>
+</head>
+<body>
+<h1>Event Container Demo</h1>
+<textarea id="output">
+logs here:
+</textarea>
+
+<div id="eventContainer" onclick="bubbDivMsg(event)">
+    DIV - click me
+    <p id="btn1">P - click me</p>
+    <p id="btn2">P - click me</p>
+
+</div>
+
+
+
+
+</body>
+</html>
