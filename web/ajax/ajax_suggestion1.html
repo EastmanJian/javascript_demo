@@ -1,0 +1,51 @@
+<html>
+<head>
+    <script type="text/javascript">
+        /**
+         * use a variable resultTime to record the current page result's request timestamp.
+         * Due to network latency, the response of the requests might not in order, to avoid the latest result is
+         * covered by older result, compare the resultTime with the requestTime, display the result only if  requestTime
+         * is later than resultTime.
+         */
+        var resultTime = 0;
+        function showHint(str) {
+            if (str.length == 0) {
+                document.getElementById("txtHint").innerHTML = "";
+                return;
+            }
+
+            var url = "gethint1.jsp?q=" + str + "&sid=" + Math.random();
+            ajax(url, render);
+        }
+
+        function render(data, reqTime) {
+            if (reqTime > resultTime) {
+                console.log("show latest result(time=" + reqTime + "), last result time=" + resultTime);
+                resultTime = reqTime;
+                document.getElementById("txtHint").innerHTML = data;
+            } else {
+                console.log("Abort the result(time=" + reqTime+ ") because it's earlier than the current result(time=" + resultTime + ")");
+            }
+        }
+
+        function ajax(url, callback) {
+            var xmlHttp = new XMLHttpRequest();
+            var requestTime = Date.now();
+            xmlHttp.onload = function () {
+                if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+                    callback(xmlHttp.responseText, requestTime);
+                }
+            }
+            xmlHttp.open("GET", url, true);
+            xmlHttp.send(null);
+        }
+    </script>
+</head>
+<body>
+<form>
+    <b>First Name:</b>
+    <input type="text" id="txt1"
+           onkeyup="showHint(this.value)">
+</form>
+<p><b>Suggestions: </b><span id="txtHint"></span></p></body>
+</html>

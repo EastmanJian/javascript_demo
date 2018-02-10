@@ -26,7 +26,7 @@
             }
 
             var url = "gethint.jsp?q=" + str;
-            url = url + "&sid=" + Math.random();
+            url = url + "&sid=" + Math.random(); // avoid browser cache
             xmlHttp.open("GET", url, true);
             xmlHttp.send(null);
         }
